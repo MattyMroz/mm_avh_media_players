@@ -50,7 +50,7 @@ Zalecane jest dostosowanie ustawień do swoich preferencji.
 
 ## 🚩 Aktualizacje
 
-- Aktualna Wersja: [MM_AVH_media_players](https://github.com/MattyMroz/MM_AVH_media_players/blob/main/assets/video/filtr_shaders.mp4)
+- Aktualna Wersja: [MM_AVH_media_players](https://github.com/MattyMroz/MM_AVH_media_players/archive/refs/heads/main.zip)
 - YouTube .dlp: [https://github.com/yt-dlp/yt-dlp](https://github.com/yt-dlp/yt-dlp)
 - `mpv/updater.bat` - Aktualizacja MPV Media Player
 
