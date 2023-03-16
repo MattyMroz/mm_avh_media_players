@@ -52,8 +52,6 @@ Zalecane jest dostosowanie ustawień do swoich preferencji.
 
 - Aktualna Wersja: [MM_AVH_media_players](https://github.com/MattyMroz/MM_AVH_media_players/archive/refs/heads/main.zip)
 - YouTube .dlp: [https://github.com/yt-dlp/yt-dlp](https://github.com/yt-dlp/yt-dlp)
-- `mpv/updater.bat` - Aktualizacja MPV Media Player
-
 
 ## 📄Opis Programów
 
