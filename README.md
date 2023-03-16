@@ -21,7 +21,7 @@
     - 🔥 _Skróty Klawiszowe (Klawiatura, Mysz)_
     - 🔥 _Nowoczesny, Minimalistyczny, Intuicyjny Interfejs Wraz z Możliwością Dostosowania_
 
-## Instalacja Windows
+## ⚡ Instalacja Windows
 
 [![Pobierz MM_AVH Media Players](https://img.shields.io/badge/Pobierz-MM_AVH%20Media%20Players-blue?style=for-the-badge&logo=github)](https://github.com/MattyMroz/MM_AVH_media_players/archive/refs/heads/main.zip)
 
@@ -53,7 +53,7 @@ Zalecane jest dostosowanie ustawień do swoich preferencji.
 - Aktualna Wersja: [MM_AVH_media_players](https://github.com/MattyMroz/MM_AVH_media_players/archive/refs/heads/main.zip)
 - YouTube .dlp: [https://github.com/yt-dlp/yt-dlp](https://github.com/yt-dlp/yt-dlp)
 
-## 📄Opis Programów
+## 📄 Opis Programów
 
 **VLC i MPV** to dwa popularne odtwarzacze multimediów. Oba programy oferują wiele możliwości, ale różnią się między sobą w kilku aspektach.
 
@@ -65,7 +65,7 @@ MPV posiada **w pełni konfigurowalną, sterowaną poleceniami warstwę sterowan
 
 Podsumowując, **VLC i MPV** to dwa różne odtwarzacze, które mogą być używane w zależności od potrzeb użytkownika. **VLC** jest **uniwersalnym** odtwarzaczem, który jest łatwy w obsłudze i oferuje wiele zaawansowanych opcji. **MPV** natomiast jest bardziej **zaawansowany i konfigurowalny**, co czyni go idealnym wyborem dla użytkowników, którzy chcą dostosować odtwarzacz do swoich potrzeb, a także dla tych, którzy chcą uzyskać **lepszą jakość wideo**.
 
-## ❓Tutoriale i Inspiracje
+## ❓ Tutoriale i Inspiracje
 
 - Tutorial: https://www.youtube.com/watch?v=GFzRd79DYok&t=1s&ab_channel=Comexs
 - Tutorial: https://www.youtube.com/watch?v=rBsokbd_l0c&ab_channel=adriabama06
@@ -142,8 +142,6 @@ Podsumowując, **VLC i MPV** to dwa różne odtwarzacze, które mogą być używ
 ## 📝 Uwagi
 
 **MM_AVH Media Players** to zestaw dwóch popularnych odtwarzaczy multimedialnych, które oferują wiele możliwości. Programy te różnią się między sobą w kilku aspektach, co pozwala użytkownikom na wybór odpowiedniego odtwarzacza dla swoich potrzeb. Warto dodać, że **MM_AVH Media Players** zawierają dodatkowe skiny, skrypty, filtry i shadery, które pozwalają na dostosowanie odtwarzaczy do własnych preferencji. Mimo pewnych niedociągnięć programy te stanowią dobry wybór dla użytkowników poszukujących uniwersalnych i konfigurowalnych odtwarzaczy multimedialnych.
-
-<!-- kontakt mail -->
 
 ## 📧 Kontakt
 
