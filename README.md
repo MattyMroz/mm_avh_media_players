@@ -59,7 +59,7 @@ Zalecane jest dostosowanie ustawień do swoich preferencji.
 
 **VLC i MPV** to dwa popularne odtwarzacze multimediów. Oba programy oferują wiele możliwości, ale różnią się między sobą w kilku aspektach.
 
-**VLC** jest uniwersalnym odtwarzaczem, który obsługuje praktycznie wszystkie formaty **audio i wideo**. Ma intuicyjny **interfejs graficzny** użytkownika i jest łatwy w obsłudze, co czyni go idealnym wyborem dla **początkujących użytkowników**. Oferuje również wiele zaawansowanych opcji, takich jak streamowanie, konwertowanie i zapisywanie strumieni. Ponadto, jest dostępny na **wiele systemów operacyjnych**, w tym Windows, Linux, Mac OS X i Android.
+**VLC** jest uniwersalnym odtwarzaczem, który obsługuje praktycznie wszystkie formaty **audio i wideo**. Ma intuicyjny **interfejs graficzny** użytkownika i jest łatwy w obsłudze, co czyni go idealnym wyborem dla **początkujących użytkowników**. Oferuje również wiele zaawansowanych opcji, takich jak streamowanie, konwertowanie i zapisywanie strumieni. Ponadto jest dostępny na **wiele systemów operacyjnych**, w tym Windows, Linux, Mac OS X i Android.
 
 **MPV** z kolei skupia się przede wszystkim na odtwarzaniu **wideo**, oferując **wiele zaawansowanych funkcji**, takich jak manipulacja prędkością odtwarzania, ładowanie napisów czy efekty wideo. MPV ma bardzo prosty **wiersza poleceń** i posiada **minimalny interfejs użytkownika**. Jest to program dedykowany **bardziej zaawansowanym użytkownikom**, którzy chcą dostosować niemal każdy aspekt działania odtwarzacza.
 
@@ -77,7 +77,7 @@ Podsumowując, **VLC i MPV** to dwa różne odtwarzacze, które mogą być używ
 - MPV ustawienia edytowane z: https://github.com/Tsubajashi/mpv-settings
 - VapourSynth-RIFE-ncnn-Vulkan: https://github.com/HomeOfVapourSynthEvolution/VapourSynth-RIFE-ncnn-Vulkan/releases/tag/r9
 - VapourSynth-RIFE-ncnn-Vulkan models: https://github.com/HomeOfVapourSynthEvolution/VapourSynth-RIFE-ncnn-Vulkan/releases/tag/r3
-- Anime4k: https://github.com/bloc97/Anime4K
+- Anime4K: https://github.com/bloc97/Anime4K
 - FSR: https://gist.github.com/agyild/82219c545228d70c5604f865ce0b0ce5
 - FSRCNN: https://github.com/igv/FSRCNN-TensorFlow
 - NIS (NVScaler): https://gist.github.com/agyild/7e8951915b2bf24526a9343d951db214
@@ -135,7 +135,7 @@ Podsumowując, **VLC i MPV** to dwa różne odtwarzacze, które mogą być używ
 
 ## <p align="center"> Shadery + Filtry - Interpolacja
 
-### <p align="center"> [Link do Wideo](https://mattymroz.github.io/Test/)
+### <p align="center"> [Link do Wideo](https://mattymroz.github.io/MM_AVH_media_players/)
 
 </p>
 
@@ -143,7 +143,7 @@ Podsumowując, **VLC i MPV** to dwa różne odtwarzacze, które mogą być używ
 
 ## 📝 Uwagi
 
-**MM_AVH Media Players** to zestaw dwóch popularnych odtwarzaczy multimedialnych, które oferują wiele możliwości. Programy te różnią się między sobą w kilku aspektach, co pozwala użytkownikom na wybór odpowiedniego odtwarzacza dla swoich potrzeb. Warto dodać, że **MM_AVH Media Players** zawierają dodatkowe skiny, skrypty, filtry i shadery, które pozwalają na dostosowanie odtwarzaczy do własnych preferencji. Mimo pewnych niedociągnięć, programy te stanowią dobry wybór dla użytkowników poszukujących uniwersalnych i konfigurowalnych odtwarzaczy multimedialnych.
+**MM_AVH Media Players** to zestaw dwóch popularnych odtwarzaczy multimedialnych, które oferują wiele możliwości. Programy te różnią się między sobą w kilku aspektach, co pozwala użytkownikom na wybór odpowiedniego odtwarzacza dla swoich potrzeb. Warto dodać, że **MM_AVH Media Players** zawierają dodatkowe skiny, skrypty, filtry i shadery, które pozwalają na dostosowanie odtwarzaczy do własnych preferencji. Mimo pewnych niedociągnięć programy te stanowią dobry wybór dla użytkowników poszukujących uniwersalnych i konfigurowalnych odtwarzaczy multimedialnych.
 
 <!-- kontakt mail -->
 
