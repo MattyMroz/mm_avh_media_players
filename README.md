@@ -23,7 +23,7 @@
 
 ## Instalacja Windows
 
-[![Pobierz MM_AVH Media Players](https://img.shields.io/badge/Pobierz-MM_AVH%20Media%20Players-blue?style=for-the-badge&logo=github)]()
+[![Pobierz MM_AVH Media Players](https://img.shields.io/badge/Pobierz-MM_AVH%20Media%20Players-blue?style=for-the-badge&logo=github)](https://github.com/MattyMroz/MM_AVH_media_players/archive/refs/heads/main.zip)
 
 - VLC Media Player - Wymaga instalacji _([link](https://www.videolan.org/vlc/))_
 - MPV Media Player - Nie wymaga instalacji _([link](https://mpv.io/installation/))_
@@ -50,8 +50,10 @@ Zalecane jest dostosowanie ustawień do swoich preferencji.
 
 ## 🚩 Aktualizacje
 
+- Aktualna Wersja: [MM_AVH_media_players](https://github.com/MattyMroz/MM_AVH_media_players/blob/main/assets/video/filtr_shaders.mp4)
 - YouTube .dlp: [https://github.com/yt-dlp/yt-dlp](https://github.com/yt-dlp/yt-dlp)
-- `mpv/updater.bat`
+- `mpv/updater.bat` - Aktualizacja MPV Media Player
+
 
 ## 📄Opis Programów
 
