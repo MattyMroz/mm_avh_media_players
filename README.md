@@ -41,7 +41,7 @@
 
   W pliku **`mpv.conf`** możesz modyfikować ustawienia odtwarzacza tj.: bazowe ustawienia, funkcjonalności, OSD, dźwięk, wideo; skrypty, filtry, shadery automatycznie uruchamiane; napisy, zrzuty ekranu. W tym pliku możesz również dodać własne ustawienia np.:
 
-  - Możesz zmienić `border=no` na `border=yes` w pliku aby wyświetlać górny pasek menu, gdy nie MPV nie odtwarza pliku.
+  - Możesz zmienić `border=no` na `border=yes` w pliku aby wyświetlać górny pasek menu, gdy MPV nie odtwarza pliku.
   - Zmienić napisy m.in: `sub-font = "Open Sans SemiBold"` lub `sub-font-size = 46`
   - Możesz ustawiać ścieżkę do zapisywania zrzutów ekranu w pliku `screenshot-template = "~~desktop/MPV Screens/MPV-%F-%wH.%wM.%wS.%wT-F%{estimated-frame-number}"`
   - Możesz też dodawać własne filtry i rozszerzenia np.: poprzez język skryptów Lua.
