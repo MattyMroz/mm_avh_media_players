@@ -151,11 +151,11 @@ Podsumowując, **VLC i MPV** to dwa różne odtwarzacze, które mogą być używ
 
 <img src="./assets/img/svp_fps.png" alt="" width="100%" height="">
 
-<p align="center"><img src="./assets/img/svp_menu.png" alt="" width="100%" height=""></p>
+<p align="center"><img src="./assets/img/svp_menu.png" alt="" width="70%" height=""></p>
 
 ### <p align="center">Dark Mode</p>
 
-<p align="center"><img src="./assets/img/svp_darkmode.png" alt="" width="100%" height=""></p>
+<p align="center"><img src="./assets/img/svp_darkmode.png" alt="" width="70%" height=""></p>
 
 ---
 
