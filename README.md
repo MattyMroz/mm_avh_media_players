@@ -5,6 +5,7 @@
 <p align="center">
 <img src="./assets/img/vlc.png" alt="VLC" width="177" height="200">
 <img src="./assets/img/mpv.png" alt="MPV" width="200" height="200">
+<img src="./assets/img/svp.png" alt="MPV" width="170" height="170">
 </p>
 
 ## 📦 Zawartość
@@ -18,6 +19,7 @@
   - ✅ MPV Media Player **Skrypty, Filtry, Shadery, Skróty Klawiszowe**:
     - 🔥 _Shadery Skalujące, Wyostrzające, Koloryzujące_
     - 🔥 _Filtry Interpolacyjne (CPU, GPU)_
+      - 🔥 _W tym SVP (Smooth Video Project)_
     - 🔥 _Skróty Klawiszowe (Klawiatura, Mysz)_
     - 🔥 _Nowoczesny, Minimalistyczny, Intuicyjny Interfejs Wraz z Możliwością Dostosowania_
 
@@ -27,6 +29,7 @@
 
 - VLC Media Player - Wymaga instalacji _([link](https://www.videolan.org/vlc/))_
 - MPV Media Player - Nie wymaga instalacji _([link](https://mpv.io/installation/))_
+- SVP 4 - Wymaga instalacji _([link](https://www.svp-team.com/get/))_
 
 ## 🔧 Sposób Korzystania
 
@@ -42,9 +45,12 @@
   W pliku **`mpv.conf`** możesz modyfikować ustawienia odtwarzacza tj.: bazowe ustawienia, funkcjonalności, OSD, dźwięk, wideo; skrypty, filtry, shadery automatycznie uruchamiane; napisy, zrzuty ekranu. W tym pliku możesz również dodać własne ustawienia np.:
 
   - Możesz zmienić `border=no` na `border=yes` w pliku aby wyświetlać górny pasek menu, gdy MPV nie odtwarza pliku.
-  - Zmienić napisy m.in: `sub-font = "Open Sans SemiBold"` lub `sub-font-size = 46`
-  - Możesz ustawiać ścieżkę do zapisywania zrzutów ekranu w pliku `screenshot-template = "~~desktop/MPV Screens/MPV-%F-%wH.%wM.%wS.%wT-F%{estimated-frame-number}"`
+  - Zmienić napisy m.in: **`sub-font = "Open Sans SemiBold"`** lub **`sub-font-size = 46`**
+  - Możesz ustawiać ścieżkę do zapisywania zrzutów ekranu w pliku **`screenshot-template = "~~desktop/MPV Screens/MPV-%F-%wH.%wM.%wS.%wT-F%{estimated-frame-number}"`**
   - Możesz też dodawać własne filtry i rozszerzenia np.: poprzez język skryptów Lua.
+
+- **SVP 4 - Podczas instalacji**: Wybierz opcję z odpowiednim odtwarzaczem np. MPV lub VLC. W przypadku MPV, w trakcie instalacji SVP 4, należy wybrać w ustawieniach SVP 4 opcję **`MPV (64-bit)`**.
+- W folderze instalacji SVP 4 **`C:\Program Files (x86)\SVP 4`** znajdują się 2 foldery: **mpv32 i mpv64**, można je usunąć lub przekopiować do nich jeden z wybranych wersji MPV **modern, lub minimalistic**, znajdujących się na w tym repozytorium w folderach **`mpv`**.
 
 Zalecane jest dostosowanie ustawień do swoich preferencji.
 
@@ -52,6 +58,8 @@ Zalecane jest dostosowanie ustawień do swoich preferencji.
 
 - Aktualna Wersja: [MM_AVH_media_players](https://github.com/MattyMroz/MM_AVH_media_players/archive/refs/heads/main.zip)
 - YouTube .dlp: [https://github.com/yt-dlp/yt-dlp](https://github.com/yt-dlp/yt-dlp)
+
+- SVP 4: [https://www.svp-team.com/get/](https://www.svp-team.com/get/)
 
 ## 📄 Opis Programów
 
@@ -64,6 +72,8 @@ Zalecane jest dostosowanie ustawień do swoich preferencji.
 MPV posiada **w pełni konfigurowalną, sterowaną poleceniami warstwę sterowania**, która pozwala na sterowanie MPV za pomocą klawiatury, myszy lub pilota zdalnego sterowania. MPV obsługuje wiele różnych wyjść wideo i audio oraz metody, w zależności od platformy. MPV **może odczytywać dane wejściowe z różnych źródeł**, a także obsługuje specjalny wejściowy **adres URL** umożliwiający odczyt danych wejściowych z innych źródeł niż dysk plików. MPV posiada wiele **skrótów klawiszowych** umożliwiających **kontrolowanie odtwarzania wideo i audio**, a także dostępne są opcje **zmiany koloru**.
 
 Podsumowując, **VLC i MPV** to dwa różne odtwarzacze, które mogą być używane w zależności od potrzeb użytkownika. **VLC** jest **uniwersalnym** odtwarzaczem, który jest łatwy w obsłudze i oferuje wiele zaawansowanych opcji. **MPV** natomiast jest bardziej **zaawansowany i konfigurowalny**, co czyni go idealnym wyborem dla użytkowników, którzy chcą dostosować odtwarzacz do swoich potrzeb, a także dla tych, którzy chcą uzyskać **lepszą jakość wideo**.
+
+**SVP (Smooth Video Project)** to program do poprawy płynności odtwarzanych wideo poprzez **zwiększenie liczby klatek na sekundę (FPS)**. SVP działa jako wtyczka dla odtwarzaczy wideo takich jak **VLC, MPV, MPC-HC czy PotPlayer** i korzysta z **technologii interpolacji klatek**, aby wideo wyglądało bardziej płynnie. Dzięki temu filmy odtwarzane są z większą ilością klatek, co pozwala na uzyskanie efektu zbliżonego do tego, jakbyśmy oglądali je na żywo. Program oferuje również szereg innych funkcji, takich jak **redukcja drgań kamery, korekcja kolorów, czy skalowanie obrazu**. SVP jest dostępny w wersji **darmowej oraz płatnej**, która oferuje dodatkowe funkcje i wsparcie techniczne.
 
 ## ❓ Tutoriale i Inspiracje
 
@@ -131,17 +141,27 @@ Podsumowując, **VLC i MPV** to dwa różne odtwarzacze, które mogą być używ
 
 </p>
 
-## <p align="center"> Shadery + Filtry - Interpolacja
+---
 
-### <p align="center"> [Link do Wideo](https://mattymroz.github.io/MM_AVH_media_players/)
-
+<p align="center">
+<img src="./assets/img/svp.png" alt="" width="" height="100">
 </p>
+
+## <p align="center"> 📸 SVP - Smooth Video Project
+
+<img src="./assets/img/svp_fps.png" alt="" width="100%" height="">
+
+<p align="center"><img src="./assets/img/svp_menu.png" alt="" width="100%" height=""></p>
+
+### <p align="center">Dark Mode</p>
+
+<p align="center"><img src="./assets/img/svp_darkmode.png" alt="" width="100%" height=""></p>
 
 ---
 
 ## 📝 Uwagi
 
-**MM_AVH Media Players** to zestaw dwóch popularnych odtwarzaczy multimedialnych, które oferują wiele możliwości. Programy te różnią się między sobą w kilku aspektach, co pozwala użytkownikom na wybór odpowiedniego odtwarzacza dla swoich potrzeb. Warto dodać, że **MM_AVH Media Players** zawierają dodatkowe skiny, skrypty, filtry i shadery, które pozwalają na dostosowanie odtwarzaczy do własnych preferencji. Mimo pewnych niedociągnięć programy te stanowią dobry wybór dla użytkowników poszukujących uniwersalnych i konfigurowalnych odtwarzaczy multimedialnych.
+**MM_AVH Media Players** to zestaw dwóch popularnych odtwarzaczy multimedialnych, które oferują wiele możliwości. Programy te różnią się między sobą w kilku aspektach, co pozwala użytkownikom na wybór odpowiedniego odtwarzacza dla swoich potrzeb. Warto dodać, że **MM_AVH Media Players** zawierają dodatkowe skiny, skrypty, filtry, shadery i programy, które pozwalają na dostosowanie odtwarzaczy do własnych preferencji. Mimo pewnych niedociągnięć programy te stanowią dobry wybór dla użytkowników poszukujących uniwersalnych i konfigurowalnych odtwarzaczy multimedialnych.
 
 ## 📧 Kontakt
 
