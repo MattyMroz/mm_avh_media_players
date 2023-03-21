@@ -5,7 +5,7 @@
 <p align="center">
 <img src="./assets/img/vlc.png" alt="VLC" width="177" height="200">
 <img src="./assets/img/mpv.png" alt="MPV" width="200" height="200">
-<img src="./assets/img/svp.png" alt="MPV" width="170" height="170">
+<img src="./assets/img/svp.png" alt="MPV" width="190" height="190">
 </p>
 
 ## 📦 Zawartość
