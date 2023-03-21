@@ -29,6 +29,10 @@
 
 - VLC Media Player - Wymaga instalacji _([link](https://www.videolan.org/vlc/))_
 - MPV Media Player - Nie wymaga instalacji _([link](https://mpv.io/installation/))_
+  - Ale dla lepszego doświadczenia zalecane jest zainstalowanie
+    - Przejdź do folderu **`mpv`** i uruchom jako administrator **`mpv-install.bat`**
+    - Aby odinstalować kliknij **`mpv-uninstall.bat`**
+    - Teraz można możliwe jest uruchamianie MPV z poziomu systemu Windows i wybranie jakko domyślnego odtwarzacza
 - SVP 4 - Wymaga instalacji _([link](https://www.svp-team.com/get/))_
 
 ## 🔧 Sposób Korzystania
