@@ -162,6 +162,10 @@ Podsumowując, **VLC i MPV** to dwa różne odtwarzacze, które mogą być używ
 <p align="center"><img src="./assets/img/svp_darkmode.png" alt="" width="70%" height=""></p>
 
 ---
+## <p align="center"> Shadery + Filtry - Interpolacja
+
+### <p align="center"> [Link do Wideo](https://mattymroz.github.io/MM_AVH_media_players/)
+---
 
 ## 📝 Uwagi
 
