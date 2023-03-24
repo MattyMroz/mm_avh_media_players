@@ -30,9 +30,9 @@
 - VLC Media Player - Wymaga instalacji _([link](https://www.videolan.org/vlc/))_
 - MPV Media Player - Nie wymaga instalacji _([link](https://mpv.io/installation/))_
   - Ale dla lepszego doświadczenia zalecane jest zainstalowanie
-    - Przejdź do folderu **`mpv`** i uruchom jako administrator **`mpv-install.bat`**
+    - Umieść folder **`mpv`** w wybranej lokalizacji > Przejdź do folderu **`mpv`** i uruchom jako administrator **`mpv-install.bat`**
     - Aby odinstalować kliknij **`mpv-uninstall.bat`**
-    - Teraz można możliwe jest uruchamianie MPV z poziomu systemu Windows i wybranie jakko domyślnego odtwarzacza
+    - Teraz możliwe jest uruchamianie MPV z poziomu systemu Windows i wybranie jakko domyślnego odtwarzacza
 - SVP 4 - Wymaga instalacji _([link](https://www.svp-team.com/get/))_
 
 ## 🔧 Sposób Korzystania
@@ -41,8 +41,8 @@
 
 - **MPV stosowanie:**
 
-  - Utworzyć skrót do pliku: `\mpv\mpv.exe`
-  - Możesz przenieść folder `mpv` do `C:\Program Files` i używać z poziomu systemu Windows
+  - Możesz utworzyć skrót do pliku: **`\mpv\mpv.exe`**
+  - Możesz przenieść folder **`mpv`** do **`C:\Program Files`** i używać z poziomu systemu Windows uruchamiając jako administrator **`mpv-install.bat`**
 
   W pliku **`input.conf` / `input_uosc.conf`** możesz modyfikować skróty klawiszowe, które są dostępne w odtwarzaczu. W tym pliku możesz również dodać własne skróty klawiszowe.
 
