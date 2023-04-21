@@ -212,3 +212,4 @@ vec4 hook() {
     vec4 L = POSTKERNEL_texOff(0);
     return vec4(avg[1] + avg[2] * L.rgb - avg[0], L.a);
 }
+

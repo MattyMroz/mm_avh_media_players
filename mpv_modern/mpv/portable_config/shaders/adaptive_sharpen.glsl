@@ -228,3 +228,4 @@ vec4 hook() {
     */
     return vec4(sharpdiff_lim + c[0], HOOKED_texOff(0).a);
 }
+

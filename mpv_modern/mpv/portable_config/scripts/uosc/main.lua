@@ -166,19 +166,19 @@ local function create_default_menu()
     }, {
         title = 'Wideo',
         items = {{
-            title = 'Zmień Tryb Dekodowania',
+            title = 'Przełącz na Tryb Dekodowania',
             value = 'cycle-values hwdec no auto auto-copy'
         }, {
-            title = 'Zmień Tryb Usuwania Pasów Kolorów',
+            title = 'Przełącz na Tryb Usuwania Pasów Kolorów',
             value = 'cycle deband'
         }, {
-            title = 'Zmień Tryb Usuwania Linii Międzyklatkowych',
+            title = 'Przełącz na Tryb Usuwania Przeplotu',
             value = 'cycle deinterlace'
         }, {
-            title = 'Zmień Tryb Automatycznego Korygowania Kolorów',
+            title = 'Przełącz na Tryb Automatyczna Korekcja Kolorów',
             value = 'cycle icc-profile-auto'
         }, {
-            title = 'Zmień Tryb Analizy Czasowej',
+            title = 'Przełącz na Tryb Analizy Kodów Czasowych',
             value = 'cycle correct-pts'
         }}
     }, {
