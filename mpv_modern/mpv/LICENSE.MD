@@ -34,4 +34,4 @@ _通常协议已集成在文件内部_
 
 ## .../mpv-lazy/vapoursynth64/plugins
 
-参见 [对应维基页面](https://github.com/hooke007/MPV_lazy/wiki/2_%E8%AE%BE%E7%BD%AE%E6%96%87%E4%BB%B6%E5%A4%B9%EF%BC%88%E4%BE%BF%E6%90%BA%E5%BC%8F%EF%BC%89#vs%E8%84%9A%E6%9C%AC%E8%B7%AF%E5%BE%84-)
+参见 [对应维基页面](https://github.com/hooke007/MPV_lazy/wiki/2_portable_config#vs%E8%84%9A%E6%9C%AC%E8%B7%AF%E5%BE%84-)

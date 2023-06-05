@@ -1,8 +1,6 @@
 @echo off
-chcp 936
-
 setlocal enableextensions enabledelayedexpansion
-path %SystemRoot%\System32;%SystemRoot%;%SystemRoot%\System32\Wbem;%SystemRoot%\System32\WindowsPowerShell\v1.0\
+path %SystemRoot%\System32;%SystemRoot%;%SystemRoot%\System32\Wbem
 
 :: Unattended install flag. When set, the script will not require user input.
 set unattended=no
@@ -18,13 +16,12 @@ call :ensure_admin
 set mpv_args=
 
 :: Get mpv.exe location
-cd /D %~dp0\..
-set mpv_path=%cd%\mpv.exe
-if not exist "%mpv_path%" call :die "mpv.exe 不在上级目录中"
+set mpv_path=%~dp0mpv.exe
+if not exist "%mpv_path%" call :die "mpv.exe not found"
 
-:: Get mpv-icon.ico location
-set icon_path=%~dp0mpv-icon.ico
-if not exist "%icon_path%" call :die "mpv-icon.ico 不在当前目录中"
+:: Get mpv-document.ico location
+set icon_path=%~dp0mpv-document.ico
+if not exist "%icon_path%" call :die "mpv-document.ico not found"
 
 :: Register mpv.exe under the "App Paths" key, so it can be found by
 :: ShellExecute, the run command, the start menu, etc.
@@ -46,7 +43,7 @@ call :reg add "%classes_root_key%\SystemFileAssociations\audio\OpenWithList\mpv.
 :: Add DVD AutoPlay handler
 set autoplay_key=HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\AutoplayHandlers
 call :reg add "%classes_root_key%\io.mpv.dvd\shell\play" /d "&Play" /f
-call :reg add "%classes_root_key%\io.mpv.dvd\shell\play\command" /d "\"%mpv_path%\" %mpv_args% dvd:// --dvd-device=\"%%%%L\"" /f
+call :reg add "%classes_root_key%\io.mpv.dvd\shell\play\command" /d "\"%mpv_path%\" %mpv_args% dvd:// --dvd-device=\"%%%%L" /f
 call :reg add "%autoplay_key%\Handlers\MpvPlayDVDMovieOnArrival" /v "Action" /d "Play DVD movie" /f
 call :reg add "%autoplay_key%\Handlers\MpvPlayDVDMovieOnArrival" /v "DefaultIcon" /d "%mpv_path%,0" /f
 call :reg add "%autoplay_key%\Handlers\MpvPlayDVDMovieOnArrival" /v "InvokeProgID" /d "io.mpv.dvd" /f
@@ -56,7 +53,7 @@ call :reg add "%autoplay_key%\EventHandlers\PlayDVDMovieOnArrival" /v "MpvPlayDV
 
 :: Add Blu-ray AutoPlay handler
 call :reg add "%classes_root_key%\io.mpv.bluray\shell\play" /d "&Play" /f
-call :reg add "%classes_root_key%\io.mpv.bluray\shell\play\command" /d "\"%mpv_path%\" %mpv_args% bd:// --bluray-device=\"%%%%L\"" /f
+call :reg add "%classes_root_key%\io.mpv.bluray\shell\play\command" /d "\"%mpv_path%\" %mpv_args% bd:// --bluray-device=\"%%%%L" /f
 call :reg add "%autoplay_key%\Handlers\MpvPlayBluRayOnArrival" /v "Action" /d "Play Blu-ray movie" /f
 call :reg add "%autoplay_key%\Handlers\MpvPlayBluRayOnArrival" /v "DefaultIcon" /d "%mpv_path%,0" /f
 call :reg add "%autoplay_key%\Handlers\MpvPlayBluRayOnArrival" /v "InvokeProgID" /d "io.mpv.bluray" /f
@@ -176,15 +173,12 @@ call :add_type ""                                 "audio" "CUE Sheet"           
 :: Register "Default Programs" entry
 call :reg add "HKLM\SOFTWARE\RegisteredApplications" /v "mpv" /d "SOFTWARE\Clients\Media\mpv\Capabilities" /f
 
-:: Add start menu link
-powershell "$s=(New-Object -COM WScript.Shell).CreateShortcut('%ProgramData%\Microsoft\Windows\Start Menu\Programs\mpv.lnk');$s.TargetPath='%mpv_path%';$s.Save()"
-
 echo.
-echo 注册成功！
-echo 现在可以手动在控制面板中选取 mpv 为默认的 “视频播放器”
+echo Installed successfully^^! You can now configure mpv's file associations in the
+echo Default Programs control panel.
 echo.
 if [%unattended%] == [yes] exit 0
-<nul set /p =按下任意键转到 “系统设置-默认应用” 设置面板 . . .
+<nul set /p =Press any key to open the Default Programs control panel . . .
 pause >nul
 control /name Microsoft.DefaultPrograms
 exit 0
@@ -201,8 +195,8 @@ exit 0
 	:: https://stackoverflow.com/questions/4051883/batch-script-how-to-check-for-admin-rights
 	openfiles >nul 2>&1
 	if errorlevel 1 (
-		echo 该批处理脚本须要管理员权限
-		echo 选中 “mpv-install.bat” 右键 “以管理员身份运行” 重新操作
+		echo This batch script requires administrator privileges. Right-click on
+		echo mpv-install.bat and select "Run as administrator".
 		call :die
 	)
 	goto :EOF
@@ -244,11 +238,11 @@ exit 0
 	call :reg add "%key%\shell\open" /v "LegacyDisable" /f
 
 	:: Set open command
-	call :reg add "%key%\shell\open\command" /d "\"%mpv_path%\" %mpv_args% -- \"%%%%L\"" /f
+	call :reg add "%key%\shell\open\command" /d "\"%mpv_path%\" %mpv_args% -- \"%%%%L" /f
 
 	:: Add "play" verb
 	call :reg add "%key%\shell\play" /d "&Play" /f
-	call :reg add "%key%\shell\play\command" /d "\"%mpv_path%\" %mpv_args% -- \"%%%%L\"" /f
+	call :reg add "%key%\shell\play\command" /d "\"%mpv_path%\" %mpv_args% -- \"%%%%L" /f
 
 	goto :EOF
 
@@ -256,10 +250,10 @@ exit 0
 	set prog_id=%~1
 	set friendly_name=%~2
 
-	:: Add ProgId, edit flags are FTA_OpenIsSafe
+	:: Add ProgId, edit flags are FTA_OpenIsSafe | FTA_AlwaysUseDirectInvoke
 	set prog_id_key=%classes_root_key%\%prog_id%
 	call :reg add "%prog_id_key%" /d "%friendly_name%" /f
-	call :reg add "%prog_id_key%" /v "EditFlags" /t REG_DWORD /d 65536 /f
+	call :reg add "%prog_id_key%" /v "EditFlags" /t REG_DWORD /d 4259840 /f
 	call :reg add "%prog_id_key%" /v "FriendlyTypeName" /d "%friendly_name%" /f
 	call :reg add "%prog_id_key%\DefaultIcon" /d "%icon_path%" /f
 	call :add_verbs "%prog_id_key%"
@@ -292,7 +286,7 @@ exit 0
 	set friendly_name=%~3
 	set extension=%~4
 
-	echo 关联文件格式 "%extension%"
+	echo Adding "%extension%" file type
 
 	:: Add ProgId
 	set prog_id=io.mpv%extension%

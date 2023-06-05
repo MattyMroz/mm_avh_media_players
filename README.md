@@ -15,11 +15,10 @@
 - 🎬 **MM_AVH Media Players:**
   - ✅ VLC Media Player **Dark Mode**
   - ✅ MPV Media Player **Modern Mode**
-  - ✅ MPV Media Player **Minimalistic Mode**
   - ✅ MPV Media Player **Skrypty, Filtry, Shadery, Skróty Klawiszowe**:
     - 🔥 _Shadery Skalujące, Wyostrzające, Koloryzujące_
     - 🔥 _Filtry Interpolacyjne (CPU, GPU)_
-      - 🔥 _W tym SVP (Smooth Video Project)_
+      - 🔥 _W tym SVP (Smooth Video Project | **NEW ~ ZA DARMO 3 OPCJE**)_
     - 🔥 _Skróty Klawiszowe (Klawiatura, Mysz)_
     - 🔥 _Nowoczesny, Minimalistyczny, Intuicyjny Interfejs Wraz z Możliwością Dostosowania_
 
@@ -33,7 +32,7 @@
     - Umieść folder **`mpv`** w wybranej lokalizacji > Przejdź do folderu **`mpv`** i uruchom jako administrator **`mpv-install.bat`**
     - Aby odinstalować kliknij **`mpv-uninstall.bat`**
     - Teraz możliwe jest uruchamianie MPV z poziomu systemu Windows i wybranie jakko domyślnego odtwarzacza
-- SVP 4 - Wymaga instalacji _([link](https://www.svp-team.com/get/))_
+- SVP 4 - Wymaga instalacji _([link](https://www.svp-team.com/get/))_ - Oprócz Linuxa płatne jednorazowo, ale MPV zawarłem darmowe **3 opcje: x2, 60 i 120 FPS**
 
 ## 🔧 Sposób Korzystania
 
@@ -54,7 +53,7 @@
   - Możesz też dodawać własne filtry i rozszerzenia np.: poprzez język skryptów Lua.
 
 - **SVP 4 - Podczas instalacji**: Wybierz opcję z odpowiednim odtwarzaczem np. MPV lub VLC. W przypadku MPV, w trakcie instalacji SVP 4, należy wybrać w ustawieniach SVP 4 opcję **`MPV (64-bit)`**.
-- W folderze instalacji SVP 4 **`C:\Program Files (x86)\SVP 4`** znajdują się 2 foldery: **mpv32 i mpv64**, można je usunąć lub przekopiować do nich jeden z wybranych wersji MPV **modern, lub minimalistic**, znajdujących się na w tym repozytorium w folderach **`mpv`**.
+- W folderze instalacji SVP 4 **`C:\Program Files (x86)\SVP 4`** znajdują się 2 foldery: **mpv32 i mpv64**, można je usunąć lub przekopiować do nich jeden z wybranych wersji MPV **modern**, znajdujących się na w tym repozytorium w folderach **`mpv`**.
 
 Zalecane jest dostosowanie ustawień do swoich preferencji.
 
@@ -81,21 +80,30 @@ Podsumowując, **VLC i MPV** to dwa różne odtwarzacze, które mogą być używ
 
 ## ❓ Tutoriale i Inspiracje
 
-- Tutorial: https://www.youtube.com/watch?v=GFzRd79DYok&t=1s&ab_channel=Comexs
-- Tutorial: https://www.youtube.com/watch?v=rBsokbd_l0c&ab_channel=adriabama06
-- MPV_lazy: (modele i filtry): https://github.com/hooke007/MPV_lazy
+- Tutorial: **WKRÓTCE**
+- MPV_lazy: https://github.com/hooke007/MPV_lazy
+- K7SFUNC: https://github.com/hooke007/MPV_lazy/wiki/3_K7sfunc
 - Inspiracja: https://github.com/adriabama06/Preconfigured-MPV#readme
-- Vapoursynth: https://github.com/vapoursynth/vapoursynth/releases/tag/R60
 - MPV ustawienia edytowane z: https://github.com/Tsubajashi/mpv-settings
-- VapourSynth-RIFE-ncnn-Vulkan: https://github.com/HomeOfVapourSynthEvolution/VapourSynth-RIFE-ncnn-Vulkan/releases/tag/r9
-- VapourSynth-RIFE-ncnn-Vulkan models: https://github.com/HomeOfVapourSynthEvolution/VapourSynth-RIFE-ncnn-Vulkan/releases/tag/r3
+- VapourSynth-RIFE-ncnn-Vulkan: https://github.com/HomeOfVapourSynthEvolution/VapourSynth-RIFE-ncnn-Vulkan/releases
+- VapourSynth-RIFE-ncnn-Vulkan R3: https://github.com/HomeOfVapourSynthEvolution/VapourSynth-RIFE-ncnn-Vulkan/releases/tag/r3
 - Anime4K: https://github.com/bloc97/Anime4K
-- FSR: https://gist.github.com/agyild/82219c545228d70c5604f865ce0b0ce5
-- FSRCNN: https://github.com/igv/FSRCNN-TensorFlow
-- NIS (NVScaler): https://gist.github.com/agyild/7e8951915b2bf24526a9343d951db214
-- i inne zawarte w MPV_lazy
 
 ## 👀 Demonstracja
+
+## <p align="center"> 🎬 Shadery + Filtry + Interpolacja
+
+### <p align="center"> [Link do Wideo](https://mattymroz.github.io/MM_AVH_media_players/)
+
+<video controls>
+    <source src="https://github.com/MattyMroz/MM_AVH_media_players/blob/main/assets/video/fps.mp4?raw=true" type="video/mp4">
+</video>
+<video controls>
+    <source src="https://github.com/MattyMroz/MM_AVH_media_players/blob/main/assets/video/filtr_shaders.mp4?raw=true"
+        type="video/mp4">
+</video>
+
+---
 
 <p align="center">
 <img src="./assets/img/vlc.png" alt="" width="" height="100">
@@ -111,12 +119,6 @@ Podsumowując, **VLC i MPV** to dwa różne odtwarzacze, które mogą być używ
 
 <p align="center">
 <img src="./assets/img/mpv.png" alt="" width="" height="100">
-</p>
-
-## <p align="center"> 📸 MPV Minimalistic Mode
-
-<img src="./assets/img/mpv_minimalistic_min.png" alt="" width="100%" height="">
-<img src="./assets/img/mpv_minimalistic_full.png" alt="" width="100%" height="">
 </p>
 
 ## <p align="center"> 📸 MPV Modern Mode
@@ -161,10 +163,6 @@ Podsumowując, **VLC i MPV** to dwa różne odtwarzacze, które mogą być używ
 
 <p align="center"><img src="./assets/img/svp_darkmode.png" alt="" width="70%" height=""></p>
 
----
-## <p align="center"> Shadery + Filtry - Interpolacja
-
-### <p align="center"> [Link do Wideo](https://mattymroz.github.io/MM_AVH_media_players/)
 ---
 
 ## 📝 Uwagi
@@ -262,108 +260,109 @@ Podsumowując, **VLC i MPV** to dwa różne odtwarzacze, które mogą być używ
 | Przewijanie w górę                          | Przewiń do przodu o 10 sekund w pliku multimedialnym.                                                    |
 | Przewijanie w dół                           | Przewiń do tyłu o 10 sekund w pliku multimedialnym.                                                      |
 
-## Zmiany Zaproponowane Przez MM – AVH Dla MPV w Modern i Minimalistic Mode
+## Zmiany Zaproponowane Przez MM – AVH Dla MPV w Modern Mode
 
-| Skrót klawiszowy | Funkcja                                                  |
-| ---------------- | -------------------------------------------------------- |
-| Menu             | Otwórz Plik Multimedialny > ※ Otwórz Plik                |
-| Menu             | Otwórz Plik Multimedialny > ※ Dodaj Plik z Napisami      |
-| Menu             | Nawigacja > ※ Lista Odtwarzania                          |
-| Menu             | Nawigacja > ※ Lista Wersji                               |
-| Menu             | Nawigacja > ※ Lista Rozdziałów                           |
-| Menu             | Nawigacja > ※ Lista Ścieżek Wideo                        |
-| Menu             | Nawigacja > ※ Lista Ścieżek Dźwiękowych                  |
-| Menu             | Nawigacja > ※ Lista Ścieżek Napisów                      |
-| Menu             | Nawigacja > Losowe Przemieszanie Listy Odtwarzania       |
-| ,                | Odtwarzanie > Poprzednia Klatka                          |
-| .                | Odtwarzanie > Następna Klatka                            |
-| l                | Odtwarzanie > Ustaw / Czyść Punkty Pętli AB              |
-| [                | Odtwarzanie > Zmniejszenie Prędkości -                   |
-| ]                | Odtwarzanie > Zwiększenie Prędkości +                    |
-| Backspace        | Odtwarzanie > Prędkość = 1x                              |
-| \                | Odtwarzanie > Prędkość = 2x                              |
-| -                | Odtwarzanie > Zmniejsz Głośność -                        |
-| =                | Odtwarzanie > Zwiększ Głośność +                         |
-| c                | Odtwarzanie > Przewijanie Wsteczne Dźwięku o 100 ms      |
-| v                | Odtwarzanie > Opóźnienie Dźwięku o 100ms                 |
-| z                | Odtwarzanie > Przewijanie Wsteczne Napisów o 100 ms      |
-| x                | Odtwarzanie > Opóźnienie Napisów o 100 ms                |
-| Shift+Backspace  | Odtwarzanie > Zresetuj Synchronizację Dźwięku i Napisów  |
-| ~                | Filtr Wideo > Wyczyść Interpolację                       |
-| !                | Filtr Wideo > (CPU) MVTools_Pot                          |
-| @                | Filtr Wideo > (CPU) MVTools_2x                           |
-| #                | Filtr Wideo > (CPU) MVTools_Standard                     |
-| $                | Filtr Wideo > (CPU) MVTools_120                          |
-| %                | Filtr Wideo > (GPU) RIFE_480p_x2                         |
-| ^                | Filtr Wideo > (GPU) RIFE_720_2x                          |
-| &                | Filtr Wideo > (GPU) RIFE_Standard_1080_2x                |
-| Ctrl+`           | Shader > Wyczyść Shadery                                 |
-| Ctrl+1           | Shader > On / Off - KrigBilateral                        |
-| Ctrl+2           | Shader > On / Off - AMD_FSR_rgb                          |
-| Ctrl+3           | Shader > On / Off - Anime4K_Restore_CNN_L                |
-| Ctrl+4           | Shader > On / Off - Anime4K_Upscale_GAN_x2_M             |
-| Ctrl+5           | Shader > On / Off - Adaptive_Sharpen                     |
-| Ctrl+6           | Shader > On / Off - Nneid3_128_8x4                       |
-| Ctrl+7           | Shader > On / Off - FSRCNNX_x2_16                        |
-| Ctrl+s           | ※ Zrzut Ekranu                                           |
-| Menu             | Wideo > Przełącz Tryb Dekodowania                        |
-| Menu             | Wideo > Przełącz Tryb Usuwania Pasów Kolorów             |
-| Menu             | Wideo > Przełącz Stan Usuwania Przeplotu                 |
-| Menu             | Wideo > Przełącz na Automatyczną Korekcję Kolorów        |
-| Menu             | Wideo > Przełącz Stan Usuwania Przeplotu                 |
-| Menu             | Wideo > Przełącz na Automatyczną Korekcję Kolorów        |
-| Menu             | Wideo > Przełącz na Tryb Analizy Kodów Czasowych         |
-| 1                | Wideo > Filtr > Kontrast -                               |
-| 2                | Wideo > Filtr > Kontrast +                               |
-| 3                | Wideo > Filtr > Jasność -                                |
-| 4                | Wideo > Filtr > Jasność +                                |
-| 5                | Wideo > Filtr > Gamma -                                  |
-| 6                | Wideo > Filtr > Gamma +                                  |
-| 7                | Wideo > Filtr > Nasycenie Kolorów -                      |
-| 8                | Wideo > Filtr > Nasycenie Kolorów +                      |
-| 9                | Wideo > Filtr > Barwa -                                  |
-| 0                | Wideo > Filtr > Barwa +                                  |
-| Ctrl+9           | Wideo > Filtr > Tryb Walki!                              |
-| Ctrl+0           | Wideo > Filtr > Tryb Sport!                              |
-| Ctrl+Backspace   | Wideo > Filtr > Resetuj Wszystko                         |
-| I                | Narzędzia > Wyświetl Statystyki Dla Nerdów               |
-| `                | Narzędzia > Wyświetl Konsolę                             |
-| Ctrl+r           | Narzędzia > Wyczyść Zarejestrowane Wartości Atrybutów    |
-| Menu             | Narzędzia > Zmień Obramowanie Okna                       |
-| Menu             | Narzędzia > Przełącz Okno na Tryb Zawsze na Wierzchu     |
-| Menu             | Narzędzia > ※ Lista Urządzeń Wyjściowych Audio           |
-| Menu             | Narzędzia > ※ Jakość Strumieniowania                     |
-| Menu             | Narzędzia > ※ Otwórz Bieżący Folder Pliku                |
-| Menu             | Narzędzia > ※ Otwórz Folder Ustawień                     |
-| Menu             | Zatrzymaj                                                |
-| Ctrl+q           | Wyjdź                                                    |
-| POWER            | Wyjdź                                                    |
-| PLAY             | Odtwarzaj                                                |
-| PAUSE            | Pauza                                                    |
-| PLAYPAUSE        | Pauza / Odtwarzaj                                        |
-| STOP             | Zatrzymaj                                                |
-| REWIN            | Przewiń do przodu o 30 sekund                            |
-| FORWARD          | Przewiń do tyłu o 30 sekund                              |
-| PREV             | Poprzedni Film                                           |
-| NEXT             | Następny Film                                            |
-| MBTN_BACK        | Poprzedni Film                                           |
-| MBTN_FORWARD     | Następny Film                                            |
-| MBTN_LEFT        | Ignoruj                                                  |
-| MBTN_LEFT_DBL    | Przełącz Tryb Pełnoekranowy                              |
-| MBTN_RIGHT       | Wyświetl Menu                                            |
-| MBTN_RIGHT_DBL   | Ignoruj                                                  |
-| WHEEL_DOWN       | Zmniejsz Głośność o 2 dB                                 |
-| WHEEL_UP         | Zwiększ Głośność o 2 dB                                  |
-| ESC              | Wyłącz Tryb Pełnoekranowy                                |
-| ENTER            | Włącz Tryb Pełnoekranowy                                 |
-| Alt+ENTER        | Przełącz Tryb Pełnoekranowy                              |
-| SPACE            | Pauza / Odtwarzaj                                        |
-| DOWN             | Przewiń do tyłu o 30 sekund                              |
-| UP               | Przewiń do przodu o 30 sekund                            |
-| LEFT             | Przewiń do tyłu o 5 sekund                               |
-| RIGHT            | Przewiń do przodu o 5 sekund                             |
-| f                | Przełącz Tryb Pełnoekranowy                              |
-| m                | Przełącz Tryb Wyciszenia                                 |
-| Shift+RIGHT      | Przewiń do przodu o 1 klatkę                             |
-| Shift+LEFT       | Przewiń do tyłu o 1 klatkę                               |
-| F4               | Przełącz Zmiana Proporcji Wideo na 16:9, 4:3, 2.35:1, -1 |
+| Skrót klawiszowy | Funkcja                                                 |
+| ---------------- | ------------------------------------------------------- |
+| Menu             | Otwórz Plik Multimedialny > ※ Otwórz Plik               |
+| Menu             | Otwórz Plik Multimedialny > ※ Dodaj Plik z Napisami     |
+| Menu             | Nawigacja > ※ Lista Odtwarzania                         |
+| Menu             | Nawigacja > ※ Lista Wersji                              |
+| Menu             | Nawigacja > ※ Lista Rozdziałów                          |
+| Menu             | Nawigacja > ※ Lista Ścieżek Wideo                       |
+| Menu             | Nawigacja > ※ Lista Ścieżek Dźwiękowych                 |
+| Menu             | Nawigacja > ※ Lista Ścieżek Napisów                     |
+| Menu             | Nawigacja > Losowe Przemieszanie Listy Odtwarzania      |
+| ,                | Odtwarzanie > Poprzednia Klatka                         |
+| .                | Odtwarzanie > Następna Klatka                           |
+| l                | Odtwarzanie > Ustaw / Czyść Punkty Pętli AB             |
+| [                | Odtwarzanie > Zmniejszenie Prędkości -                  |
+| ]                | Odtwarzanie > Zwiększenie Prędkości +                   |
+| Backspace        | Odtwarzanie > Prędkość = 1x                             |
+| \                | Odtwarzanie > Prędkość = 2x                             |
+| -                | Odtwarzanie > Zmniejsz Głośność -                       |
+| =                | Odtwarzanie > Zwiększ Głośność +                        |
+| c                | Odtwarzanie > Przewijanie Wsteczne Dźwięku o 100 ms     |
+| v                | Odtwarzanie > Opóźnienie Dźwięku o 100ms                |
+| z                | Odtwarzanie > Przewijanie Wsteczne Napisów o 100 ms     |
+| x                | Odtwarzanie > Opóźnienie Napisów o 100 ms               |
+| Shift+Backspace  | Odtwarzanie > Zresetuj Synchronizację Dźwięku i Napisów |
+| ~                | Filtr Wideo > Wyczyść Interpolację                      |
+| !                | Filtr Wideo > (CPU) MVTools_x2                          |
+| @                | Filtr Wideo > (CPU) MVTools_60                          |
+| #                | Filtr Wideo > (CPU) MVTools_120                         |
+| $                | Filtr Wideo > (GPU) MEMC_SVP_x2                         |
+| %                | Filtr Wideo > (GPU) MEMC_SVP_60                         |
+| ^                | Filtr Wideo > (GPU) MEMC_SVP_120                        |
+| &                | Filtr Wideo > (GPU) RIFE_480p_x2                        |
+| \*               | Filtr Wideo > (GPU) RIFE_720_2x                         |
+| (                | Filtr Wideo > (GPU) RIFE_1080p_x2                       |
+| Ctrl+`           | Shader > Wyczyść Shadery                                |
+| Ctrl+1           | Shader > On / Off - KrigBilateral                       |
+| Ctrl+2           | Shader > On / Off - AMD_FSR_rgb                         |
+| Ctrl+3           | Shader > On / Off - Anime4K_Restore_CNN_L               |
+| Ctrl+4           | Shader > On / Off - Anime4K_Upscale_GAN_x2_M            |
+| Ctrl+5           | Shader > On / Off - Adaptive_Sharpen                    |
+| Ctrl+6           | Shader > On / Off - Nneid3_128_8x4                      |
+| Ctrl+7           | Shader > On / Off - FSRCNNX_x2_16                       |
+| Ctrl+s           | ※ Zrzut Ekranu                                          |
+| Menu             | Wideo > Przełącz Tryb Dekodowania                       |
+| Menu             | Wideo > Przełącz Tryb Usuwania Pasów Kolorów            |
+| Menu             | Wideo > Przełącz Stan Usuwania Przeplotu                |
+| Menu             | Wideo > Przełącz na Automatyczną Korekcję Kolorów       |
+| Menu             | Wideo > Przełącz Stan Usuwania Przeplotu                |
+| Menu             | Wideo > Przełącz na Automatyczną Korekcję Kolorów       |
+| Menu             | Wideo > Przełącz na Tryb Analizy Kodów Czasowych        |
+| 1                | Wideo > Filtr > Kontrast -                              |
+| 2                | Wideo > Filtr > Kontrast +                              |
+| 3                | Wideo > Filtr > Jasność -                               |
+| 4                | Wideo > Filtr > Jasność +                               |
+| 5                | Wideo > Filtr > Gamma -                                 |
+| 6                | Wideo > Filtr > Gamma +                                 |
+| 7                | Wideo > Filtr > Nasycenie Kolorów -                     |
+| 8                | Wideo > Filtr > Nasycenie Kolorów +                     |
+| 9                | Wideo > Filtr > Barwa -                                 |
+| 0                | Wideo > Filtr > Barwa +                                 |
+| Ctrl+9           | Wideo > Filtr > Tryb Walki!                             |
+| Ctrl+0           | Wideo > Filtr > Tryb Sport!                             |
+| Ctrl+Backspace   | Wideo > Filtr > Resetuj Wszystko                        |
+| I                | Narzędzia > Wyświetl Statystyki Dla Nerdów              |
+| `                | Narzędzia > Wyświetl Konsolę                            |
+| Ctrl+r           | Narzędzia > Wyczyść Zarejestrowane Wartości Atrybutów   |
+| Menu             | Narzędzia > Zmień Obramowanie Okna                      |
+| Menu             | Narzędzia > Przełącz Okno na Tryb Zawsze na Wierzchu    |
+| Menu             | Narzędzia > ※ Lista Urządzeń Wyjściowych Audio          |
+| Menu             | Narzędzia > ※ Jakość Strumieniowania                    |
+| Menu             | Narzędzia > ※ Otwórz Bieżący Folder Pliku               |
+| Menu             | Narzędzia > ※ Otwórz Folder Ustawień                    |
+| Menu             | Zatrzymaj                                               |
+| Ctrl+q           | Wyjdź                                                   |
+| POWER            | Wyjdź                                                   |
+| PLAY             | Odtwarzaj                                               |
+| PAUSE            | Pauza                                                   |
+| PLAYPAUSE        | Pauza / Odtwarzaj                                       |
+| STOP             | Zatrzymaj                                               |
+| REWIN            | Przewiń do przodu o 30 sekund                           |
+| FORWARD          | Przewiń do tyłu o 30 sekund                             |
+| PREV             | Poprzedni Film                                          |
+| NEXT             | Następny Film                                           |
+| MBTN_BACK        | Poprzedni Film                                          |
+| MBTN_FORWARD     | Następny Film                                           |
+| MBTN_LEFT        | Ignoruj                                                 |
+| MBTN_LEFT_DBL    | Przełącz Tryb Pełnoekranowy                             |
+| MBTN_RIGHT       | Wyświetl Menu                                           |
+| MBTN_RIGHT_DBL   | Ignoruj                                                 |
+| WHEEL_DOWN       | Zmniejsz Głośność o 2 dB                                |
+| WHEEL_UP         | Zwiększ Głośność o 2 dB                                 |
+| ESC              | Wyłącz Tryb Pełnoekranowy                               |
+| ENTER            | Włącz Tryb Pełnoekranowy                                |
+| Alt+ENTER        | Przełącz Tryb Pełnoekranowy                             |
+| SPACE            | Pauza / Odtwarzaj                                       |
+| DOWN             | Przewiń do tyłu o 30 sekund                             |
+| UP               | Przewiń do przodu o 30 sekund                           |
+| LEFT             | Przewiń do tyłu o 5 sekund                              |
+| RIGHT            | Przewiń do przodu o 5 sekund                            |
+| f                | Przełącz Tryb Pełnoekranowy                             |
+| m                | Przełącz Tryb Wyciszenia                                |
+| Shift+RIGHT      | Przewiń do przodu o 1 klatkę                            |
+| Shift+LEFT       | Przewiń do tyłu o 1 klatkę                              |
