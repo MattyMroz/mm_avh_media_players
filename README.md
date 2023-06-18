@@ -272,22 +272,22 @@ Podsumowując, **VLC i MPV** to dwa różne odtwarzacze, które mogą być używ
 | Menu             | Nawigacja > ※ Lista Ścieżek Wideo                       |
 | Menu             | Nawigacja > ※ Lista Ścieżek Dźwiękowych                 |
 | Menu             | Nawigacja > ※ Lista Ścieżek Napisów                     |
-| Menu             | Nawigacja > Losowe Przemieszanie Listy Odtwarzania      |
+| Menu             | Nawigacja > Losowa Lista Odtwarzania                    |
 | ,                | Odtwarzanie > Poprzednia Klatka                         |
 | .                | Odtwarzanie > Następna Klatka                           |
 | l                | Odtwarzanie > Ustaw / Czyść Punkty Pętli AB             |
-| [                | Odtwarzanie > Zmniejszenie Prędkości -                  |
-| ]                | Odtwarzanie > Zwiększenie Prędkości +                   |
+| [                | Odtwarzanie > Prędkość -0.1                             |
+| ]                | Odtwarzanie > Prędkość +0.1                             |
 | Backspace        | Odtwarzanie > Prędkość = 1x                             |
 | \                | Odtwarzanie > Prędkość = 2x                             |
-| -                | Odtwarzanie > Zmniejsz Głośność -                       |
-| =                | Odtwarzanie > Zwiększ Głośność +                        |
-| c                | Odtwarzanie > Przewijanie Wsteczne Dźwięku o 100 ms     |
-| v                | Odtwarzanie > Opóźnienie Dźwięku o 100ms                |
-| z                | Odtwarzanie > Przewijanie Wsteczne Napisów o 100 ms     |
-| x                | Odtwarzanie > Opóźnienie Napisów o 100 ms               |
-| Shift+Backspace  | Odtwarzanie > Zresetuj Synchronizację Dźwięku i Napisów |
-| ~                | Filtr Wideo > Wyczyść Interpolację                      |
+| -                | Odtwarzanie > Zmniejsz Głośność -2                      |
+| =                | Odtwarzanie > Zwiększ Głośność +2                       |
+| c                | Odtwarzanie > Opóźnij dźwięk -100 ms                    |
+| v                | Odtwarzanie > Przyspiesz dźwięk +100 ms                 |
+| z                | Odtwarzanie > Opóźnij Napisy -100 ms                    |
+| x                | Odtwarzanie > Przyspiesz Napisy +100 ms                 |
+| Shift+Backspace  | Odtwarzanie > Przywróć Synchronizację Dźwięku i Napisów |
+| ~                | Filtr Wideo > Wyłącz Interpolację                       |
 | !                | Filtr Wideo > (CPU) MVTools_x2                          |
 | @                | Filtr Wideo > (CPU) MVTools_60                          |
 | #                | Filtr Wideo > (CPU) MVTools_120                         |
@@ -297,7 +297,7 @@ Podsumowując, **VLC i MPV** to dwa różne odtwarzacze, które mogą być używ
 | &                | Filtr Wideo > (GPU) RIFE_480p_x2                        |
 | \*               | Filtr Wideo > (GPU) RIFE_720_2x                         |
 | (                | Filtr Wideo > (GPU) RIFE_1080p_x2                       |
-| Ctrl+`           | Shader > Wyczyść Shadery                                |
+| Ctrl+`           | Shader > Wyłącz Shader                                  |
 | Ctrl+1           | Shader > On / Off - KrigBilateral                       |
 | Ctrl+2           | Shader > On / Off - AMD_FSR_rgb                         |
 | Ctrl+3           | Shader > On / Off - Anime4K_Restore_CNN_L               |
@@ -306,13 +306,11 @@ Podsumowując, **VLC i MPV** to dwa różne odtwarzacze, które mogą być używ
 | Ctrl+6           | Shader > On / Off - Nneid3_128_8x4                      |
 | Ctrl+7           | Shader > On / Off - FSRCNNX_x2_16                       |
 | Ctrl+s           | ※ Zrzut Ekranu                                          |
-| Menu             | Wideo > Przełącz Tryb Dekodowania                       |
-| Menu             | Wideo > Przełącz Tryb Usuwania Pasów Kolorów            |
-| Menu             | Wideo > Przełącz Stan Usuwania Przeplotu                |
-| Menu             | Wideo > Przełącz na Automatyczną Korekcję Kolorów       |
-| Menu             | Wideo > Przełącz Stan Usuwania Przeplotu                |
-| Menu             | Wideo > Przełącz na Automatyczną Korekcję Kolorów       |
-| Menu             | Wideo > Przełącz na Tryb Analizy Kodów Czasowych        |
+| Menu             | Wideo > Tryb Dekodowania                                |
+| Menu             | Wideo > Tryb Usuwania Pasów Kolorów                     |
+| Menu             | Wideo > Tryb Usuwania Przeplotu                         |
+| Menu             | Wideo > Tryb Automatyczna Korekcja Kolorów              |
+| Menu             | Wideo > Tryb Analizy Kodów Czasowych                    |
 | 1                | Wideo > Filtr > Kontrast -                              |
 | 2                | Wideo > Filtr > Kontrast +                              |
 | 3                | Wideo > Filtr > Jasność -                               |
@@ -325,12 +323,12 @@ Podsumowując, **VLC i MPV** to dwa różne odtwarzacze, które mogą być używ
 | 0                | Wideo > Filtr > Barwa +                                 |
 | Ctrl+9           | Wideo > Filtr > Tryb Walki!                             |
 | Ctrl+0           | Wideo > Filtr > Tryb Sport!                             |
-| Ctrl+Backspace   | Wideo > Filtr > Resetuj Wszystko                        |
+| Ctrl+Backspace   | Wideo > Filtr > Wyłącz Filtry Kolorów                   |
 | I                | Narzędzia > Wyświetl Statystyki Dla Nerdów              |
 | `                | Narzędzia > Wyświetl Konsolę                            |
 | Ctrl+r           | Narzędzia > Wyczyść Zarejestrowane Wartości Atrybutów   |
 | Menu             | Narzędzia > Zmień Obramowanie Okna                      |
-| Menu             | Narzędzia > Przełącz Okno na Tryb Zawsze na Wierzchu    |
+| Menu             | Narzędzia > Tryb Okno Zawsze na Wierzchu                |
 | Menu             | Narzędzia > ※ Lista Urządzeń Wyjściowych Audio          |
 | Menu             | Narzędzia > ※ Jakość Strumieniowania                    |
 | Menu             | Narzędzia > ※ Otwórz Bieżący Folder Pliku               |
