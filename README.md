@@ -82,6 +82,7 @@ Podsumowując, **VLC i MPV** to dwa różne odtwarzacze, które mogą być używ
 
 - Tutorial: **WKRÓTCE**
 - MPV_lazy: https://github.com/hooke007/MPV_lazy
+- SmartCopyPaste: https://github.com/Eisa01/mpv-scripts#smartcopypaste-script
 - K7SFUNC: https://github.com/hooke007/MPV_lazy/wiki/3_K7sfunc
 - Inspiracja: https://github.com/adriabama06/Preconfigured-MPV#readme
 - MPV ustawienia edytowane z: https://github.com/Tsubajashi/mpv-settings
@@ -364,3 +365,7 @@ Podsumowując, **VLC i MPV** to dwa różne odtwarzacze, które mogą być używ
 | m                | Przełącz Tryb Wyciszenia                                |
 | Shift+RIGHT      | Przewiń do przodu o 1 klatkę                            |
 | Shift+LEFT       | Przewiń do tyłu o 1 klatkę                              |
+| Ctrl+c / Ctrl+C / Meta+c / Meta+C       | Kopiuj ścieżkę pliku / URI z czasem wznawiania używając skonfigurowanego inteligentnego zachowania                          |
+| Ctrl+v / Ctrl+V / Meta+v / Meta+V       | Wklej i uruchom do odtwarzacza mpv z schowka używając skonfigurowanego inteligentnego zachowania                            |
+| Ctrl+Alt+c / Ctrl+Alt+C / Meta+Alt+c / Meta+Alt+C | Kopiuj ścieżkę pliku bez osiągniętego czasu lub zgodnie ze skonfigurowanym specyficznym zachowaniem kopiowania    |
+| Ctrl+Alt+v / Ctrl+Alt+V / Meta+Alt+v / Meta+Alt+V | Wklej i dołącz plik wideo do listy odtwarzania lub zgodnie ze skonfigurowanym specyficznym zachowaniem wklejania  |
