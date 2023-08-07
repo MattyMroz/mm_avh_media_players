@@ -1,0 +1,65 @@
+INSTRUKCJA:
+
+Krok 1: Zainstaluj Stremio
+Otwórz przeglądarkę internetową i przejdź pod adres: https://www.stremio.com/
+Postępuj zgodnie z instrukcjami na stronie, aby pobrać i zainstalować aplikację Stremio.
+
+Krok 2: Zaloguj się i zainstaluj dodatki
+a) Uruchom aplikację Stremio i zaloguj się na swoje konto.
+b) Przejdź do sekcji dodatków.
+c) Dostępne dodatki znajdują się w trzech kategoriach, z czego jedna jest dostępna przez stronę internetową: https://stremio-addons.netlify.app
+Dodaj do swojego Stremio wybrane dodatki, takie jak:
+   - Cinemeta
+   - YouTube
+   - WatchHub
+   - Public Domain Movies
+   - Open Subtitles
+   - Local Files
+   - [Hanime.TV]
+   - Anime Kitsu
+   - Peario
+   - Popcorn Time
+   - Cinestream by dexter21767
+   - Torrentio
+   - Torrentio Lite
+   - Torrent Catalogs
+   - ThePirateBay+
+   - Streaming Catalogs
+   - Public Domain Foreign Movies
+   - Video Games
+   - Radios
+   - FMovies
+   - Cyberflix Catalog
+   - Ertfix
+   - Torrent Freak Top 10 Movies
+   - [Porn Tube]
+   - AnimeAR by dexter21767
+   - Top Seeded Movies & Series from Zoogle
+   - The Movie Database Addon
+...oraz inne, które Cię interesują.
+
+Krok 4: Zmień preferowany język napisów (opcjonalne)
+W ustawieniach aplikacji możesz zmienić preferowany język napisów, aby lepiej dopasować się do swoich potrzeb.
+
+Krok 5: Oglądaj torenty z polskimi napisami
+Od teraz, po zalogowaniu się do Stremio na swoim urządzeniu lub przeglądarce (https://web.stremio.com), będziesz mógł/a oglądać wszystkie torenty z polskimi napisami.
+
+Krok 6: Wersje z lektorem lub dubbingiem
+Wersje z lektorem lub dubbingiem zazwyczaj nie są dostępne w Stremio. Możesz wypróbować jedno z rozwiązań:
+a) Znajdź strony oferujące polskie toreny i używaj ich w połączeniu z Stremio.
+b) Pobierz torent za pomocą Stremio na swoim urządzeniu:
+   - Załaduj Stremio i wybierz film do pobrania.
+   - Kliknij w ikone ustawień w playerze, a następnie Pobierz to Wideo
+lub
+   - Pobierz wideo z np.: https://thepiratebay.org/ za pomocą https://www.qbittorrent.org/download
+  
+   - Film zostanie pobrany i zapisany w wybranej lokalizacji.
+   - Znajdź film z lektorem lub dubbingiem, na przykład na stronie: https://filman.cc/
+   - Zainstaluj wtyczkę do przeglądarki Chrome do pobierania wideo, np. https://www.neatdownloadmanager.com/index.php/en/
+   - Pobierz film z gorszą jakością, ale dobrą jakością dźwięku.
+   - Otwórz film w odtwarzaczu MPV (https://github.com/MattyMroz/MM_AVH_media_players), aby dostosować jakość obrazu, ścieżkę dźwiękową, napisy oraz inne ustawienia.
+   - Otwożyć film w dobrej jakośi i wybrać ścieżkę dźwiękową z filmu o gorszej jakości, ale preferowanym dźwięku
+   - MPV daje możliwość dostosowania kolorów, FPS, wyostrzenia w wypadku animacji, dostosowania wszystkich właściwości napisów i inne
+
+Pamiętaj, że te kroki mogą wymagać trochę czasu i zaangażowania, ale po zakończeniu procesu będziesz mógł/a cieszyć się filmami w wysokiej jakości z polskimi napisami lub lektorem/dubbingiem.
+
