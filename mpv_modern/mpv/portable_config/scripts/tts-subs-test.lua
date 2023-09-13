@@ -1,31 +1,27 @@
-local utils = require 'mp.utils'
+-- local utils = require 'mp.utils'
 
-local function exec(args)
-    local ret = utils.subprocess({
-        args = args
-    })
-    return ret.status, ret.stdout, ret
-end
+-- local function exec(args)
+--     local ret = utils.subprocess({
+--         args = args
+--     })
+--     return ret.status, ret.stdout, ret
+-- end
 
-local last_text = ""
-local enabled = false
+-- local tts_rate = 5
+-- local tts_volume = 65
+-- local enabled = false
+-- mp.add_key_binding("Ctrl+x", "toggle-tts", function()
+--     enabled = not enabled
+--     mp.osd_message("Tryb TTS: " .. tostring(enabled))
+-- end)
 
-local function say(text)
-    local _, _, winapi = utils.win_get_function_ptrs()
-    local hMm = winapi.mscreate("SAPI.SpVoice")
-    winapi.mssetvoice(hMm, winapi.voice_nametoid("Polish"))
-    winapi.msspeak(hMm, text, 1)
-    winapi.msclose(hMm)
-end
+-- mp.observe_property("sub-text", "string", function(prop, txt)
+--     if enabled and txt then
+--         local tts_command = string.format(
+--             'Add-Type -AssemblyName System.Speech; $speak = New-Object System.Speech.Synthesis.SpeechSynthesizer; $speak.Rate = %d; $speak.Volume = %d; $speak.SelectVoice(\'Vocalizer Expressive Zosia Harpo 22kHz\'); $speak.Speak(\'%s\')',
+--             tts_rate, tts_volume, txt)
+--         local status, stdout = exec({"powershell", "-Command", tts_command})
 
-mp.observe_property("sub-text", "string", function(prop, txt)
-    if enabled and txt ~= nil and txt ~= last_text then
-        last_text = txt
-        say(txt)
-    end
-end)
-
-mp.add_key_binding("Ctrl+x", "toggle-tts-subs", function()
-    enabled = not enabled
-    mp.osd_message("Subtitle TTS mode: " .. utils.to_string(enabled))
-end)
+--         mp.osd_message("Odczytywany tekst: " .. txt)
+--     end
+-- end)
