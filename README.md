@@ -2,7 +2,7 @@
 <img src="./assets/img/LOGO.gif" alt="LOGO">
 </p>
 
-# ✨MM_AVH MEDIA PLAYERS✨
+# <p align="center">✨MM_AVH MEDIA PLAYERS✨</p>
 
 <!-- ### _<p align="center">Multimedia Magic – Audio Visual Heaven</p>_ -->
 
