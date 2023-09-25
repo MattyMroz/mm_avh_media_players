@@ -3,7 +3,6 @@
 </p>
 
 # ✨MM_AVH MEDIA PLAYERS✨
-
 <!-- ### _<p align="center">Multimedia Magic – Audio Visual Heaven</p>_ -->
 
 <p align="center">
@@ -13,33 +12,15 @@
 <img src="./assets/img/svp.png" alt="MPV" width="190" height="190">
 </p>
 
-## Spis Treści
-
-- [📝 Krótki Opis](#-krótki-opis)
-- [📦 Zawartość](#-zawartość)
-- [⚡ Instalacja Windows](#-instalacja-windows)
-- [🔧 Sposób Korzystania](#-sposób-korzystania)
-- [🚩 Aktualizacje](#-aktualizacje)
-- [📝 Opis Programów](#-opis-programów)
-- [📸 Shadery + Filtry + Interpolacja](#-shadery--filtry--interpolacja)
-- [📸 VLC Dark Mode](#-vlc-dark-mode)
-- [📸 MPV Modern Mode](#-mpv-modern-mode)
-- [📸 SVP - Smooth Video Project](#-svp---smooth-video-project)
-- [📝 Uwagi](#-uwagi)
-- [📧 Kontakt](#-kontakt)
-- [Instrukcja i Podstawowe Skróty Klawiszowe MPV](#instrukcja-i-podstawowe-skróty-klawiszowe-mpv)
-- [Zmiany Zaproponowane Przez MM – AVH Dla MPV w Modern Mode](#zmiany-zaproponowane-przez-mm--avh-dla-mpv-w-modern-mode)
 
 ## 📝 Krótki Opis
-
 Repozytorium ma na celu **polepszenie jakości oglądanych multimediów** poprzez zastosowanie odpowiednich **ustawień, skryptów, filtrów, shaderów, skrótów klawiszowych**, a także dodanie **nowych funkcjonalności**. Wszystko to w celu uzyskania jak najlepszych wrażeń z **oglądania filmów, seriali, animacji za darmo**.
 
-**_UWAGA! - Autor nie ponosi odpowiedzialności za żadne szkody wyrządzone przez użytkownika, który korzysta z tego repozytorium. Wszystkie praktyki tu przedstawione mają charakter edukacyjny i to od użytkownika zależy czy i jak z nich skorzysta._**
+***UWAGA! - Autor nie ponosi odpowiedzialności za żadne szkody wyrządzone przez użytkownika, który korzysta z tego repozytorium. Wszystkie praktyki tu przedstawione mają charakter edukacyjny i to od użytkownika zależy czy i jak z nich skorzysta.***
 
 ## 📦 Zawartość
 
-**Wykorzystuje:**
-
+  **Wykorzystuje:**
 - 🎬 **VLC Media Player**
 - 🎬 **MPV Media Player**
 - 🎬 **Stremio Media Player**
@@ -61,11 +42,12 @@ Repozytorium ma na celu **polepszenie jakości oglądanych multimediów** poprze
     - 🔥 _Możliwość Dodawania Własnych Źródeł_
   - ✅ Porady Do **Stron z Darmowymi Filmami, Serialami, Animacjami**
 
+
+
+
 ## ⚡ Instalacja Windows
 
 [![Pobierz MM_AVH Media Players](https://img.shields.io/badge/Pobierz-MM_AVH%20Media%20Players-blue?style=for-the-badge&logo=github)](https://github.com/MattyMroz/MM_AVH_media_players/archive/refs/heads/main.zip)
-
-**Strony Programów:**
 
 - VLC Media Player - Wymaga instalacji _([link](https://www.videolan.org/vlc/))_
 - MPV Media Player - Nie wymaga instalacji _([link](https://mpv.io/installation/))_
@@ -74,9 +56,6 @@ Repozytorium ma na celu **polepszenie jakości oglądanych multimediów** poprze
     - Aby odinstalować kliknij **`mpv-uninstall.bat`**
     - Teraz możliwe jest uruchamianie MPV z poziomu systemu Windows i wybranie jakko domyślnego odtwarzacza
 - SVP 4 - Wymaga instalacji _([link](https://www.svp-team.com/get/))_ - Oprócz Linuxa płatne jednorazowo, ale MPV zawarłem darmowe **3 opcje: x2, 60 i 120 FPS**
-- Stremio
-  - Stremio Media Player - Wymaga instalacji _([link](https://www.stremio.com/downloads))_
-  - Stremio Media Player WEB - Nie wymaga instalacji _([link](https://web.stremio.com/))_
 
 ## 🔧 Sposób Korzystania
 
@@ -99,13 +78,14 @@ Repozytorium ma na celu **polepszenie jakości oglądanych multimediów** poprze
 - **SVP 4 - Podczas instalacji**: Wybierz opcję z odpowiednim odtwarzaczem np. MPV lub VLC. W przypadku MPV, w trakcie instalacji SVP 4, należy wybrać w ustawieniach SVP 4 opcję **`MPV (64-bit)`**.
 - W folderze instalacji SVP 4 **`C:\Program Files (x86)\SVP 4`** znajdują się 2 foldery: **mpv32 i mpv64**, można je usunąć lub przekopiować do nich jeden z wybranych wersji MPV **modern**, znajdujących się na w tym repozytorium w folderach **`mpv`**.
 
-- **Stremio Media Player** - [Instrukcja](./stremio/Stremio%20-%20INSTRUKCJA.txt)
-
 Zalecane jest dostosowanie ustawień do swoich preferencji.
 
 ## 🚩 Aktualizacje
 
+- Aktualna Wersja: [MM_AVH_media_players](https://github.com/MattyMroz/MM_AVH_media_players/archive/refs/heads/main.zip)
 - YouTube .dlp: [https://github.com/yt-dlp/yt-dlp](https://github.com/yt-dlp/yt-dlp)
+
+- SVP 4: [https://www.svp-team.com/get/](https://www.svp-team.com/get/)
 
 ## 📝 Opis Programów
 
@@ -120,8 +100,6 @@ MPV posiada **w pełni konfigurowalną, sterowaną poleceniami warstwę sterowan
 Podsumowując, **VLC i MPV** to dwa różne odtwarzacze, które mogą być używane w zależności od potrzeb użytkownika. **VLC** jest **uniwersalnym** odtwarzaczem, który jest łatwy w obsłudze i oferuje wiele zaawansowanych opcji. **MPV** natomiast jest bardziej **zaawansowany i konfigurowalny**, co czyni go idealnym wyborem dla użytkowników, którzy chcą dostosować odtwarzacz do swoich potrzeb, a także dla tych, którzy chcą uzyskać **lepszą jakość wideo**.
 
 **SVP (Smooth Video Project)** to program do poprawy płynności odtwarzanych wideo poprzez **zwiększenie liczby klatek na sekundę (FPS)**. SVP działa jako wtyczka dla odtwarzaczy wideo takich jak **VLC, MPV, MPC-HC czy PotPlayer** i korzysta z **technologii interpolacji klatek**, aby wideo wyglądało bardziej płynnie. Dzięki temu filmy odtwarzane są z większą ilością klatek, co pozwala na uzyskanie efektu zbliżonego do tego, jakbyśmy oglądali je na żywo. Program oferuje również szereg innych funkcji, takich jak **redukcja drgań kamery, korekcja kolorów, czy skalowanie obrazu**. SVP jest dostępny w wersji **darmowej oraz płatnej**, która oferuje dodatkowe funkcje i wsparcie techniczne.
-
-**Stremio Media Player** to program do odtwarzania filmów, seriali i animacji. Program oferuje **dostęp do wielu platform streamingowych**, takich jak Netflix, HBO GO, Amazon Prime Video, Hulu, YouTube, Twitch i wiele innych. Stremio pozwala również na **dodawanie własnych źródeł** i **tworzenie własnej biblioteki multimediów**. Program oferuje również **dynamiczne wyświetlanie torrentów** i **strumieniowanie torrentów do VLC i MPV**.
 
 ## ❓ Tutoriale i Inspiracje
 
@@ -140,6 +118,14 @@ Podsumowując, **VLC i MPV** to dwa różne odtwarzacze, które mogą być używ
 ## <p align="center"> 🎬 Shadery + Filtry + Interpolacja
 
 ### <p align="center"> [Link do Wideo](https://mattymroz.github.io/MM_AVH_media_players/)
+
+<video controls>
+    <source src="https://github.com/MattyMroz/MM_AVH_media_players/blob/main/assets/video/fps.mp4?raw=true" type="video/mp4">
+</video>
+<video controls>
+    <source src="https://github.com/MattyMroz/MM_AVH_media_players/blob/main/assets/video/filtr_shaders.mp4?raw=true"
+        type="video/mp4">
+</video>
 
 ---
 
@@ -202,16 +188,6 @@ Podsumowując, **VLC i MPV** to dwa różne odtwarzacze, które mogą być używ
 <p align="center"><img src="./assets/img/svp_darkmode.png" alt="" width="70%" height=""></p>
 
 ---
-
-<p align="center">
-<img src="./assets/img/stremio.png" alt="" width="" height="100">
-</p>
-
-## <p align="center"> 📸 Stremio Media Player
-
-<img src="./assets/img/stremio_menu.png" alt="" width="100%" height="">
-<img src="./assets/img/stremio_player.png" alt="" width="100%" height="">
-</p>
 
 ## 📝 Uwagi
 

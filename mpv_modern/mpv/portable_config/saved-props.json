@@ -1,1 +1,1 @@
-{"glsl-shaders":["~~/shaders/KrigBilateral.glsl","~~/shaders/AMD_FSR_rgb.glsl","~~/shaders/Anime4K_Restore_CNN_L.glsl","~~/shaders/Anime4K_Upscale_GAN_x2_M.glsl","~~/shaders/nnedi3_nns128_win8x4.glsl","~~/shaders/FSRCNNX_x2_16_0_4_1.glsl"],"volume":116}
+{"volume":108,"glsl-shaders":["~~/shaders/KrigBilateral.glsl","~~/shaders/AMD_FSR_rgb.glsl","~~/shaders/Anime4K_Restore_CNN_L.glsl","~~/shaders/Anime4K_Upscale_GAN_x2_M.glsl","~~/shaders/nnedi3_nns128_win8x4.glsl","~~/shaders/FSRCNNX_x2_16_0_4_1.glsl"]}
