@@ -63,7 +63,7 @@ Repozytorium ma na celu **polepszenie jakości oglądanych multimediów** poprze
 
 ## ⚡ Instalacja Windows
 
-[![Pobierz MM_AVH Media Players](https://img.shields.io/badge/Pobierz-MM_AVH%20Media%20Players-blue?style=for-the-badge&logo=github)](https://github.com/MattyMroz/MM_AVH_media_players/archive/refs/heads/main.zip)
+[![Pobierz MM_AVH Media Players](https://img.shields.io/badge/Pobierz-mm_avh%20Media%20Players-blue?style=for-the-badge&logo=github)](https://github.com/MattyMroz/MM_AVH_media_players/archive/refs/heads/main.zip)
 
 **Strony Programów:**
 
