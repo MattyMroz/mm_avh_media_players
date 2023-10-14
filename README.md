@@ -63,7 +63,7 @@ Repozytorium ma na celu **polepszenie jakości oglądanych multimediów** poprze
 
 ## ⚡ Instalacja Windows
 
-[![Pobierz MM_AVH Media Players](https://img.shields.io/badge/Pobierz-MM_AVH%20Media%20Players-blue?style=for-the-badge&logo=github)](https://github.com/MattyMroz/MM_AVH_media_players/archive/refs/heads/main.zip)
+[![Pobierz MM_AVH Media Players](https://img.shields.io/badge/Pobierz-mm_avh%20Media%20Players-blue?style=for-the-badge&logo=github)](https://github.com/MattyMroz/mm_avh_media_players/archive/refs/heads/main.zip)
 
 **Strony Programów:**
 
@@ -139,7 +139,7 @@ Podsumowując, **VLC i MPV** to dwa różne odtwarzacze, które mogą być używ
 
 ## <p align="center"> 🎬 Shadery + Filtry + Interpolacja
 
-### <p align="center"> [Link do Wideo](https://mattymroz.github.io/MM_AVH_media_players/)
+### <p align="center"> [Link do Wideo](https://mattymroz.github.io/mm_avh_media_players/)
 
 ---
 
@@ -215,7 +215,7 @@ Podsumowując, **VLC i MPV** to dwa różne odtwarzacze, które mogą być używ
 
 ## 📝 Uwagi
 
-**MM_AVH Media Players** to zestaw dwóch popularnych odtwarzaczy multimedialnych, które oferują wiele możliwości. Programy te różnią się między sobą w kilku aspektach, co pozwala użytkownikom na wybór odpowiedniego odtwarzacza dla swoich potrzeb. Warto dodać, że **MM_AVH Media Players** zawierają dodatkowe skiny, skrypty, filtry, shadery i programy, które pozwalają na dostosowanie odtwarzaczy do własnych preferencji. Mimo pewnych niedociągnięć programy te stanowią dobry wybór dla użytkowników poszukujących uniwersalnych i konfigurowalnych odtwarzaczy multimedialnych.
+**MM_AVH Media Players** to zestaw trzech popularnych odtwarzaczy multimedialnych, które oferują wiele możliwości. Programy te różnią się między sobą w kilku aspektach, co pozwala użytkownikom na wybór odpowiedniego odtwarzacza dla swoich potrzeb. Warto dodać, że **MM_AVH Media Players** zawierają dodatkowe skiny, skrypty, filtry, shadery i programy, które pozwalają na dostosowanie odtwarzaczy do własnych preferencji. Mimo pewnych niedociągnięć programy te stanowią dobry wybór dla użytkowników poszukujących uniwersalnych i konfigurowalnych odtwarzaczy multimedialnych.
 
 ## 📧 Kontakt
 

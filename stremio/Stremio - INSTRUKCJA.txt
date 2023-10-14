@@ -57,7 +57,7 @@ lub
    - Znajdź film z lektorem lub dubbingiem, na przykład na stronie: https://filman.cc/
    - Zainstaluj wtyczkę do przeglądarki Chrome do pobierania wideo, np. https://www.neatdownloadmanager.com/index.php/en/
    - Pobierz film z gorszą jakością, ale dobrą jakością dźwięku.
-   - Otwórz film w odtwarzaczu MPV (https://github.com/MattyMroz/MM_AVH_media_players), aby dostosować jakość obrazu, ścieżkę dźwiękową, napisy oraz inne ustawienia.
+   - Otwórz film w odtwarzaczu MPV (https://github.com/MattyMroz/mm_avh_media_players), aby dostosować jakość obrazu, ścieżkę dźwiękową, napisy oraz inne ustawienia.
    - Otwożyć film w dobrej jakośi i wybrać ścieżkę dźwiękową z filmu o gorszej jakości, ale preferowanym dźwięku
    - MPV daje możliwość dostosowania kolorów, FPS, wyostrzenia w wypadku animacji, dostosowania wszystkich właściwości napisów i inne
 
