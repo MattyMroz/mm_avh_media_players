@@ -73,7 +73,7 @@ Repozytorium ma na celu **polepszenie jakości oglądanych multimediów** poprze
     - Umieść folder **`mpv`** w wybranej lokalizacji > Przejdź do folderu **`mpv`** i uruchom jako administrator **`mpv-install.bat`**
     - Aby odinstalować kliknij **`mpv-uninstall.bat`**
     - Teraz możliwe jest uruchamianie MPV z poziomu systemu Windows i wybranie jakko domyślnego odtwarzacza
-- SVP 4 - Wymaga instalacji _([link](https://www.svp-team.com/get/))_ - Oprócz Linuxa płatne jednorazowo, ale MPV zawarłem darmowe **3 opcje: x2, 60 i 120 FPS**
+- SVP 4 - Wymaga instalacji _([link](https://www.svp-team.com/get/))_ - Oprócz Linuxa płatne jednorazowo, ale MPV zawarłem darmowe **3 opcje: x2, 60, 120 i 170 FPS**
 - Stremio
   - Stremio Media Player - Wymaga instalacji _([link](https://www.stremio.com/downloads))_
   - Stremio Media Player WEB - Nie wymaga instalacji _([link](https://web.stremio.com/))_
@@ -339,12 +339,14 @@ Podsumowując, **VLC i MPV** to dwa różne odtwarzacze, które mogą być używ
 | !                                                 | Filtr Wideo > (CPU) MVTools_x2                                                                                   |
 | @                                                 | Filtr Wideo > (CPU) MVTools_60                                                                                   |
 | #                                                 | Filtr Wideo > (CPU) MVTools_120                                                                                  |
-| $                                                 | Filtr Wideo > (GPU) MEMC_SVP_x2                                                                                  |
-| %                                                 | Filtr Wideo > (GPU) MEMC_SVP_60                                                                                  |
-| ^                                                 | Filtr Wideo > (GPU) MEMC_SVP_120                                                                                 |
-| &                                                 | Filtr Wideo > (GPU) RIFE_480p_x2                                                                                 |
-| \*                                                | Filtr Wideo > (GPU) RIFE_720_2x                                                                                  |
-| (                                                 | Filtr Wideo > (GPU) RIFE_1080p_x2                                                                                |
+| $                                                 | Filtr Wideo > (GPU) MVTools_170                                                                                  |
+| %                                                 | Filtr Wideo > (GPU) MEMC_SVP_x2                                                                                  |
+| ^                                                 | Filtr Wideo > (GPU) MEMC_SVP_60                                                                                  |
+| &                                                 | Filtr Wideo > (GPU) MEMC_SVP_120                                                                                 |
+| \*                                                | Filtr Wideo > (GPU) MEMC_SVP_170                                                                                 |
+| (                                                 | Filtr Wideo > (GPU) RIFE_480p_x2                                                                                 |
+| )                                                 | Filtr Wideo > (GPU) RIFE_720_2x                                                                                  |
+| _                                                 | Filtr Wideo > (GPU) RIFE_1080p_x2                                                                                |
 | Ctrl+`                                            | Shader > Wyłącz Shader                                                                                           |
 | Ctrl+1                                            | Shader > On / Off - KrigBilateral                                                                                |
 | Ctrl+2                                            | Shader > On / Off - AMD_FSR_rgb                                                                                  |
