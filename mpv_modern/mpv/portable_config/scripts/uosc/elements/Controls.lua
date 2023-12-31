@@ -13,35 +13,59 @@ local Controls = class(Element)
 
 function Controls:new() return Class.new(self) --[[@as Controls]] end
 function Controls:init()
-	Element.init(self, 'controls')
+	Element.init(self, 'controls', {render_order = 6})
 	---@type ControlItem[] All control elements serialized from `options.controls`.
 	self.controls = {}
 	---@type ControlItem[] Only controls that match current dispositions.
 	self.layout = {}
 
+	self:init_options()
+end
+
+function Controls:destroy()
+	self:destroy_elements()
+	Element.destroy(self)
+end
+
+function Controls:init_options()
 	-- Serialize control elements
 	local shorthands = {
-		menu = 'command:menu:script-binding uosc/menu-blurred?Menu',
-		['script-stats'] = 'command:info_outline:script-binding stats/display-stats-toggle?Statystyki Dla Nerdów',
-		['play_pause'] = 'cycle:not_started:pause:no=pause_circle/yes=play_circle?Odtwórz / Wstrzymaj',
-		subtitles = 'command:subtitles:script-binding uosc/subtitles#sub>0?Ścieżka Napisów',
-		audio = 'command:graphic_eq:script-binding uosc/audio#audio>1?Ścieżka Audio',
-		['audio-device'] = 'command:speaker:script-binding uosc/audio-device?Urządzenie Audio',
-		video = 'command:theaters:script-binding uosc/video#video>1?Ścieżka Wideo',
-		playlist = 'command:list_alt:script-binding uosc/playlist?Lista Odtwarzania',
-		chapters = 'command:bookmark:script-binding uosc/chapters#chapters>0?Rozdział / Sekcja',
-		['editions'] = 'command:bookmarks:script-binding uosc/editions#editions>1?Wersja',
-		['stream-quality'] = 'command:high_quality:script-binding uosc/stream-quality? Jakość Strumieniowania',
-		['open-file'] = 'command:file_open:script-binding uosc/open-file?Wczytaj Plik',
-		['items'] = 'command:list_alt:script-binding uosc/items?Lista Odtwarzania / Przeglądarka',
-		prev = 'command:arrow_back_ios:script-binding uosc/prev?Poprzedni',
-		next = 'command:arrow_forward_ios:script-binding uosc/next?Następny',
-		first = 'command:first_page:script-binding uosc/first?Pierwszy',
-		last = 'command:last_page:script-binding uosc/last?Ostatni',
-		['loop-playlist'] = 'cycle:repeat:loop-playlist:no/inf!?Zapętlenie Listy',
-		['loop-file'] = 'cycle:repeat_one:loop-file:no/inf!?Zapętlenie',
-		shuffle = 'toggle:shuffle:shuffle?Losowe Odtwarzanie',
-		fullscreen = 'cycle:crop_free:fullscreen:no/yes=fullscreen_exit!?Pełny Ekran',
+		menu               = 'command:menu:script-binding uosc/menu-blurred?' .. lang._button01,
+		subtitles          = 'command:subtitles:script-binding uosc/subtitles#sub>0?' .. lang._button02,
+		audio              = 'command:graphic_eq:script-binding uosc/audio#audio>1?' .. lang._button03,
+		['audio-device']   = 'command:speaker:script-binding uosc/audio-device?' .. lang._button04,
+		video              = 'command:theaters:script-binding uosc/video#video>1?' .. lang._button05,
+		playlist           = 'command:list_alt:script-binding uosc/playlist?' .. lang._button06,
+		chapters           = 'command:bookmark:script-binding uosc/chapters#chapters>0?' .. lang._button07,
+		editions           = 'command:bookmarks:script-binding uosc/editions#editions>1?' .. lang._button08,
+		['stream-quality'] = 'command:high_quality:script-binding uosc/stream-quality?' .. lang._button09,
+		['open-file']      = 'command:file_open:script-binding uosc/open-file?' .. lang._button10,
+		items              = 'command:list_alt:script-binding uosc/items?' .. lang._button11,
+		prev               = 'command:arrow_back_ios:script-binding uosc/prev?' .. lang._button12,
+		['next']           = 'command:arrow_forward_ios:script-binding uosc/next?' .. lang._button13,
+		first              = 'command:first_page:script-binding uosc/first?' .. lang._button14,
+		last               = 'command:last_page:script-binding uosc/last?' .. lang._button15,
+		['loop-playlist']  = 'cycle:repeat:loop-playlist:no/inf!?' .. lang._button16,
+		['loop-file']      = 'cycle:repeat_one:loop-file:no/inf!?' .. lang._button17,
+		shuffle            = 'toggle:shuffle:shuffle?' .. lang._button18,
+		fullscreen         = 'cycle:crop_free:fullscreen:no/yes=fullscreen_exit!?' .. lang._button19,
+
+		-- 自定义的捷径
+		['play_pause']     = 'cycle:not_started:pause:no=pause_circle/yes=play_circle?' .. lang._button_ext01,
+		['pause_play']     = 'cycle:not_started:pause:no=play_circle/yes=pause_circle?' .. lang._button_ext02,
+		['pl-prev']        = 'command:navigate_before:playlist-prev?' .. lang._button_ext03,
+		['pl-next']        = 'command:navigate_next:playlist-next?' .. lang._button_ext04,
+		border             = 'toggle:border_style:border?' .. lang._button_ext05,
+		ontop              = 'cycle:move_up:ontop:no/yes!?' .. lang._button_ext06,
+		hwdec              = 'cycle:developer_board_off:hwdec:no=developer_board_off/yes=memory/auto-copy=developer_board?' .. lang._button_ext07,
+		unscaled           = 'cycle:fit_screen:video-unscaled:no/yes!?' .. lang._button_ext08,
+		deband             = 'cycle:texture:deband:no/yes!?' .. lang._button_ext09,
+		deint              = 'cycle:clear_all:deinterlace:no/yes!?' .. lang._button_ext10,
+		['shot-vid']       = 'command:screenshot:screenshot video?' .. lang._button_ext11,
+
+		['ST-stats_tog']   = 'command:info_outline:script-binding display-stats-toggle?' .. lang._button_ext12,
+		['ST-thumb_tog']   = 'command:panorama:script-binding thumb_toggle?' .. lang._button_ext13,
+
 	}
 
 	-- Parse out disposition/config pairs
@@ -50,8 +74,10 @@ function Controls:init()
 	local current_item = nil
 	for c in options.controls:gmatch('.') do
 		if not current_item then current_item = {disposition = '', config = ''} end
-		if c == '<' and #current_item.config == 0 then in_disposition = true
-		elseif c == '>' and #current_item.config == 0 then in_disposition = false
+		if c == '<' and #current_item.config == 0 then
+			in_disposition = true
+		elseif c == '>' and #current_item.config == 0 then
+			in_disposition = false
 		elseif c == ',' and not in_disposition then
 			items[#items + 1] = current_item
 			current_item = nil
@@ -78,7 +104,7 @@ function Controls:init()
 
 		-- Serialize dispositions
 		local dispositions = {}
-		for _, definition in ipairs(split(item.disposition, ' *, *')) do
+		for _, definition in ipairs(comma_split(item.disposition)) do
 			if #definition > 0 then
 				local value = definition:sub(1, 1) ~= '!'
 				local name = not value and definition:sub(2) or definition
@@ -107,6 +133,7 @@ function Controls:init()
 				))
 			else
 				local element = Button:new('control_' .. i, {
+					render_order = self.render_order,
 					icon = params[1],
 					anchor_id = 'controls',
 					on_click = function() mp.command(params[2]) end,
@@ -138,16 +165,21 @@ function Controls:init()
 				end
 
 				local element = CycleButton:new('control_' .. i, {
-					prop = params[2], anchor_id = 'controls', states = states, tooltip = tooltip,
+					render_order = self.render_order,
+					prop = params[2],
+					anchor_id = 'controls',
+					states = states,
+					tooltip = tooltip,
 				})
 				table_assign(control, {element = element, sizing = 'static', scale = 1, ratio = 1})
 				if badge then self:register_badge_updater(badge, element) end
 			end
 		elseif kind == 'speed' then
 			if not Elements.speed then
-				local element = Speed:new({anchor_id = 'controls'})
+				local element = Speed:new({anchor_id = 'controls', render_order = self.render_order})
+				local scale = tonumber(params[1]) or 1.3
 				table_assign(control, {
-					element = element, sizing = 'dynamic', scale = params[1] or 1.3, ratio = 3.5, ratio_min = 2,
+					element = element, sizing = 'dynamic', scale = scale, ratio = 3.5, ratio_min = 2,
 				})
 			else
 				msg.error('there can only be 1 speed slider')
@@ -211,25 +243,27 @@ function Controls:register_badge_updater(badge, element)
 		request_render()
 	end
 
-	if is_external_prop then element['on_external_prop_' .. prop] = function(_, value) handler(prop, value) end
-	else mp.observe_property(observable_name, 'native', handler) end
+	if is_external_prop then
+		element['on_external_prop_' .. prop] = function(_, value) handler(prop, value) end
+	else
+		self:observe_mp_property(observable_name, handler)
+	end
 end
 
 function Controls:get_visibility()
-	return (Elements.speed and Elements.speed.dragging) and 1 or Elements.timeline:get_is_hovered()
+	return Elements:v('speed', 'dragging') and 1 or Elements:maybe('timeline', 'get_is_hovered')
 		and -1 or Element.get_visibility(self)
 end
 
 function Controls:update_dimensions()
-	local window_border = Elements.window_border.size
-	local size = state.fullormaxed and options.controls_size_fullscreen or options.controls_size
-	local spacing = options.controls_spacing
-	local margin = options.controls_margin
+	local window_border = Elements:v('window_border', 'size', 0)
+	local size = round(options.controls_size * state.scale)
+	local spacing = round(options.controls_spacing * state.scale)
+	local margin = round(options.controls_margin * state.scale)
 
 	-- Disable when not enough space
-	local available_space = display.height - Elements.window_border.size * 2
-	if Elements.top_bar.enabled then available_space = available_space - Elements.top_bar.size end
-	if Elements.timeline.enabled then available_space = available_space - Elements.timeline.size_max end
+	local available_space = display.height - window_border * 2 - Elements:v('top_bar', 'size', 0)
+		- Elements:v('timeline', 'size', 0)
 	self.enabled = available_space > size + 10
 
 	-- Reset hide/enabled flags
@@ -242,7 +276,7 @@ function Controls:update_dimensions()
 
 	-- Container
 	self.bx = display.width - window_border - margin
-	self.by = (Elements.timeline.enabled and Elements.timeline.ay or display.height - window_border) - margin
+	self.by = Elements:v('timeline', 'ay', display.height - window_border) - margin
 	self.ax, self.ay = window_border + margin, self.by - size
 
 	-- Controls
@@ -325,7 +359,19 @@ end
 function Controls:on_dispositions() self:reflow() end
 function Controls:on_display() self:update_dimensions() end
 function Controls:on_prop_border() self:update_dimensions() end
+function Controls:on_prop_title_bar() self:update_dimensions() end
 function Controls:on_prop_fullormaxed() self:update_dimensions() end
 function Controls:on_timeline_enabled() self:update_dimensions() end
+
+function Controls:destroy_elements()
+	for _, control in ipairs(self.controls) do
+		if control.element then control.element:destroy() end
+	end
+end
+
+function Controls:on_options()
+	self:destroy_elements()
+	self:init_options()
+end
 
 return Controls

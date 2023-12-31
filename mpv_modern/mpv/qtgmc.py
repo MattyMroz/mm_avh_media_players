@@ -1,4 +1,7 @@
-### MOD HAvsFunc (0f6a7d9d9712d59b4e74e1e570fc6e3a526917f9)
+
+__version__ = "0.0.3"
+
+__all__ = ["QTGMC", "QTGMC_obs", "QTGMCv2"]
 
 import vapoursynth as vs
 from vapoursynth import core
@@ -8,6 +11,9 @@ import math
 
 vstools = None
 QTGMC_globals = {}
+dfttest2 = None
+
+### MOD HAvsFunc (0f6a7d9d9712d59b4e74e1e570fc6e3a526917f9)
 
 def QTGMC(
 	Input: vs.VideoNode,
@@ -361,18 +367,22 @@ def QTGMC(
 	import vsexprtools
 	import vsrgtools
 
-	def average_frames(
+	global dfttest2
+	if dfttest2 is None :
+		import dfttest2
+
+	def _average_frames(
 		clip: vs.VideoNode, weights: float | typing.Sequence[float], scenechange: float | None = None, planes: vstools.PlanesT = None
 	) -> vs.VideoNode:
-		assert vstools.check_variable(clip, average_frames)
+		assert vstools.check_variable(clip, _average_frames)
 		planes = vstools.normalize_planes(clip, planes)
-		def scdetect(clip: vs.VideoNode, threshold: float = 0.1) -> vs.VideoNode:
+		def _scdetect(clip: vs.VideoNode, threshold: float = 0.1) -> vs.VideoNode:
 			def _copy_property(n: int, f: list[vs.VideoFrame]) -> vs.VideoFrame:
 				fout = f[0].copy()
 				fout.props["_SceneChangePrev"] = f[1].props["_SceneChangePrev"]
 				fout.props["_SceneChangeNext"] = f[1].props["_SceneChangeNext"]
 				return fout
-			assert vstools.check_variable(clip, scdetect)
+			assert vstools.check_variable(clip, _scdetect)
 			sc = clip
 			if clip.format.color_family == vs.RGB:
 				sc = clip.resize.Point(format=vs.GRAY8, matrix_s="709")
@@ -381,10 +391,10 @@ def QTGMC(
 				sc = clip.std.ModifyFrame([clip, sc], _copy_property)
 			return sc
 		if scenechange:
-			clip = scdetect(clip, scenechange)
+			clip = _scdetect(clip, scenechange)
 		return clip.std.AverageFrames(weights=weights, scenechange=scenechange, planes=planes)
 
-	def mt_clamp(
+	def _mt_clamp(
 		clip: vs.VideoNode,
 		bright: vs.VideoNode,
 		dark: vs.VideoNode,
@@ -393,8 +403,8 @@ def QTGMC(
 		planes: vstools.PlanesT = None,
 	) -> vs.VideoNode:
 		## clamp the value of the clip between bright + overshoot and dark - undershoot
-		vstools.check_ref_clip(clip, bright, mt_clamp)
-		vstools.check_ref_clip(clip, dark, mt_clamp)
+		vstools.check_ref_clip(clip, bright, _mt_clamp)
+		vstools.check_ref_clip(clip, dark, _mt_clamp)
 		planes = vstools.normalize_planes(clip, planes)
 		if vsexprtools.complexpr_available:
 			expr = f"x z {undershoot} - y {overshoot} + clamp"
@@ -503,7 +513,7 @@ def QTGMC(
 		elif pNum < 8:
 			SearchParam = 16
 
-	# Noise presets                             Slower      Slow       Medium     Fast      Faster
+	# Noise presets                                     Slower      Slow       Medium     Fast      Faster
 	Denoiser = vstools.fallback(Denoiser,             ['dfttest',  'dfttest', 'dfttest', 'fft3df', 'fft3df'][npNum]).lower()
 	DenoiseMC = vstools.fallback(DenoiseMC,           [ True,       True,      False,     False,    False  ][npNum])
 	NoiseTR = vstools.fallback(NoiseTR,               [ 2,          1,         1,         1,        0      ][npNum])
@@ -688,9 +698,9 @@ def QTGMC(
 	# Create linear weightings of neighbors first                                                  -2    -1    0     1     2
 	if not isinstance(srchClip, vs.VideoNode):
 		if TR0 > 0:
-			ts1 = average_frames(bobbed, weights=[1] * 3, scenechange=28 / 255, planes=CMplanes)  # 0.00  0.33  0.33  0.33  0.00
+			ts1 = _average_frames(bobbed, weights=[1] * 3, scenechange=28 / 255, planes=CMplanes)  # 0.00  0.33  0.33  0.33  0.00
 		if TR0 > 1:
-			ts2 = average_frames(bobbed, weights=[1] * 5, scenechange=28 / 255, planes=CMplanes)  # 0.20  0.20  0.20  0.20  0.20
+			ts2 = _average_frames(bobbed, weights=[1] * 5, scenechange=28 / 255, planes=CMplanes)  # 0.20  0.20  0.20  0.20  0.20
 
 	# Combine linear weightings to give binomial weightings - TR0=0: (1), TR0=1: (1:2:1), TR0=2: (1:4:6:4:1)
 	if isinstance(srchClip, vs.VideoNode):
@@ -843,7 +853,7 @@ def QTGMC(
 			import mvsfunc as mvf
 			dnWindow = mvf.BM3D(noiseWindow, radius1=NoiseTR, sigma=[Sigma if vstools.plane in CNplanes else 0 for vstools.plane in range(3)])
 		elif Denoiser == 'dfttest':
-			dnWindow = noiseWindow.dfttest.DFTTest(sigma=Sigma * 4, tbsize=noiseTD, planes=CNplanes)
+			dnWindow = dfttest2.DFTTest(clip=noiseWindow, sigma=Sigma * 4, tbsize=noiseTD, planes=CNplanes) #TODO:GPU
 		elif Denoiser in ['knlm', 'knlmeanscl']:
 			dnWindow = vsdenoise.nl_means(noiseWindow, strength=Sigma, tr=NoiseTR, planes=CNplanes)
 		else:
@@ -1047,7 +1057,7 @@ def QTGMC(
 		else:
 			sharpLimit1 = core.rgvs.Repair(backBlend1, core.rgvs.Repair(backBlend1, edi, mode=12), mode=1)
 	elif SLMode == 2:
-		sharpLimit1 = mt_clamp(backBlend1, tMax, tMin, SOvs, SOvs)
+		sharpLimit1 = _mt_clamp(backBlend1, tMax, tMin, SOvs, SOvs)
 	else:
 		sharpLimit1 = backBlend1
 
@@ -1093,7 +1103,7 @@ def QTGMC(
 		else:
 			sharpLimit2 = core.rgvs.Repair(repair2, core.rgvs.Repair(repair2, edi, mode=12), mode=1)
 	elif SLMode >= 4:
-		sharpLimit2 = mt_clamp(repair2, tMax, tMin, SOvs, SOvs)
+		sharpLimit2 = _mt_clamp(repair2, tMax, tMin, SOvs, SOvs)
 	else:
 		sharpLimit2 = repair2
 
@@ -1624,10 +1634,10 @@ def QTGMC_GetUserGlobal(Prefix: str, Name: str) -> typing.Union[vs.VideoNode, No
 #   QTGMC( Preset="Slow", ShowSettings=True )
 
 def QTGMC_obs_Scale(value, peak):
-	def cround(x):
+	def _cround(x):
 		return math.floor(x + 0.5) if x > 0 else math.ceil(x - 0.5)
 
-	return cround(value * peak / 255) if peak != 1 else value / 255
+	return _cround(value * peak / 255) if peak != 1 else value / 255
 
 def QTGMC_obs_Weave(clip, tff):
 	if not isinstance(clip, vs.VideoNode):
@@ -1645,11 +1655,15 @@ def QTGMC_obs(
 		StabilizeNoise=None, InputType=0, ProgSADMask=None, FPSDivisor=1, ShutterBlur=0, ShutterAngleSrc=180, ShutterAngleOut=180, SBlurLimit=4, Border=False, Precise=None, Tuning='None',
 		ShowSettings=False, ForceTR=0, TFF=None, pscrn=None, int16_prescreener=None, int16_predictor=None, exp=None, alpha=None, beta=None, gamma=None, nrad=None, vcheck=None, opencl=False, device=None):
 
-	def Clamp(clip, bright_limit, dark_limit, overshoot=0, undershoot=0, planes=None):
+	global dfttest2
+	if dfttest2 is None :
+		import dfttest2
+
+	def _Clamp(clip, bright_limit, dark_limit, overshoot=0, undershoot=0, planes=None):
 		if not (isinstance(clip, vs.VideoNode) and isinstance(bright_limit, vs.VideoNode) and isinstance(dark_limit, vs.VideoNode)):
-			raise vs.Error('Clamp: this is not a clip')
+			raise vs.Error('_Clamp: this is not a clip')
 		if bright_limit.format.id != clip.format.id or dark_limit.format.id != clip.format.id:
-			raise vs.Error('Clamp: clips must have the same format')
+			raise vs.Error('_Clamp: clips must have the same format')
 		if planes is None:
 			planes = list(range(clip.format.num_planes))
 		elif isinstance(planes, int):
@@ -1657,11 +1671,11 @@ def QTGMC_obs(
 		expr = f'x y {overshoot} + > y {overshoot} + x ? z {undershoot} - < z {undershoot} - x y {overshoot} + > y {overshoot} + x ? ?'
 		return core.std.Expr([clip, bright_limit, dark_limit], expr=[expr if i in planes else '' for i in range(clip.format.num_planes)])
 
-	def DitherLumaRebuild(src, s0=2.0, c=0.0625, chroma=True):
+	def _DitherLumaRebuild(src, s0=2.0, c=0.0625, chroma=True):
 		if not isinstance(src, vs.VideoNode):
-			raise vs.Error('DitherLumaRebuild: this is not a clip')
+			raise vs.Error('_DitherLumaRebuild: this is not a clip')
 		if src.format.color_family == vs.RGB:
-			raise vs.Error('DitherLumaRebuild: RGB format is not supported')
+			raise vs.Error('_DitherLumaRebuild: RGB format is not supported')
 		isGray = (src.format.color_family == vs.GRAY)
 		isInteger = (src.format.sample_type == vs.INTEGER)
 		shift = src.format.bits_per_sample - 8
@@ -1671,15 +1685,15 @@ def QTGMC_obs(
 		e = f'{k} {1 + c} {(1 + c) * c} {t} {c} + / - * {t} 1 {k} - * + {256 << shift if isInteger else 256 / 255} *'
 		return src.std.Expr(expr=[e] if isGray else [e, f'x {neutral} - 128 * 112 / {neutral} +' if chroma else ''])
 
-	def Gauss(clip, p=None, sigma=None, planes=None):
+	def _Gauss(clip, p=None, sigma=None, planes=None):
 		if not isinstance(clip, vs.VideoNode):
-			raise vs.Error('Gauss: this is not a clip')
+			raise vs.Error('_Gauss: this is not a clip')
 		if p is None and sigma is None:
-			raise vs.Error('Gauss: must have p or sigma')
+			raise vs.Error('_Gauss: must have p or sigma')
 		if p is not None and not 0.385 <= p <= 64.921:
-			raise vs.Error('Gauss: p must be between 0.385 and 64.921 (inclusive)')
+			raise vs.Error('_Gauss: p must be between 0.385 and 64.921 (inclusive)')
 		if sigma is not None and not 0.334 <= sigma <= 4.333:
-			raise vs.Error('Gauss: sigma must be between 0.334 and 4.333 (inclusive)')
+			raise vs.Error('_Gauss: sigma must be between 0.334 and 4.333 (inclusive)')
 		if sigma is None and p is not None:
 			# Translate AviSynth parameter to standard parameter.
 			sigma = math.sqrt(1.0 / (2.0 * (p / 10.0) * math.log(2)))
@@ -2010,7 +2024,7 @@ def QTGMC_obs(
 	if SrchClipPP == 1:
 		spatialBlur = repair0.resize.Bilinear(w // 2, h // 2).std.Convolution(matrix=[1, 2, 1, 2, 4, 2, 1, 2, 1], planes=CMplanes).resize.Bilinear(w, h)
 	elif SrchClipPP >= 2:
-		spatialBlur = Gauss(repair0.std.Convolution(matrix=[1, 2, 1, 2, 4, 2, 1, 2, 1], planes=CMplanes), p=2.35)
+		spatialBlur = _Gauss(repair0.std.Convolution(matrix=[1, 2, 1, 2, 4, 2, 1, 2, 1], planes=CMplanes), p=2.35)
 	if SrchClipPP > 1:
 		spatialBlur = core.std.Merge(spatialBlur, repair0, weight=[0.1] if ChromaMotion or isGray else [0.1, 0])
 	if SrchClipPP <= 0:
@@ -2027,7 +2041,7 @@ def QTGMC_obs(
 	if maxTR > 0:
 		analyse_args = dict(blksize=BlockSize, overlap=Overlap, search=Search, searchparam=SearchParam, pelsearch=PelSearch, truemotion=TrueMotion, lambda_=Lambda, lsad=LSAD, pnew=PNew, plevel=PLevel,
 							global_=GlobalMotion, dct=DCT, chroma=ChromaMotion)
-		srchSuper = DitherLumaRebuild(srchClip, s0=1, chroma=ChromaMotion).mv.Super(pel=SubPel, sharp=SubPelInterp, hpad=hpad, vpad=vpad, chroma=ChromaMotion)
+		srchSuper = _DitherLumaRebuild(srchClip, s0=1, chroma=ChromaMotion).mv.Super(pel=SubPel, sharp=SubPelInterp, hpad=hpad, vpad=vpad, chroma=ChromaMotion)
 		bVec1 = srchSuper.mv.Analyse(isb=True, delta=1, **analyse_args)
 		fVec1 = srchSuper.mv.Analyse(isb=False, delta=1, **analyse_args)
 	if maxTR > 1:
@@ -2064,7 +2078,7 @@ def QTGMC_obs(
 				core.mv.Compensate(fullClip, fullSuper, bVec1, thscd1=ThSCD1, thscd2=ThSCD2),
 				core.mv.Compensate(fullClip, fullSuper, bVec2, thscd1=ThSCD1, thscd2=ThSCD2)])
 		if Denoiser == 'dfttest':
-			dnWindow = noiseWindow.dfttest.DFTTest(sigma=Sigma * 4, tbsize=noiseTD, planes=CNplanes)
+			dnWindow = dfttest2.DFTTest(clip=noiseWindow, sigma=Sigma * 4, tbsize=noiseTD, planes=CNplanes) #TODO:GPU
 		elif Denoiser == 'knlmeanscl':
 			if ChromaNoise and not isGray:
 				dnWindow = KNLMeansCL(noiseWindow, d=NoiseTR, h=Sigma)
@@ -2227,7 +2241,7 @@ def QTGMC_obs(
 	if Sbb not in [1, 3]:
 		backBlend1 = thin
 	else:
-		backBlend1 = core.std.MakeDiff(thin, Gauss(core.std.MakeDiff(thin, lossed1, planes=[0]).std.Convolution(matrix=[1, 2, 1, 2, 4, 2, 1, 2, 1], planes=[0]), p=5), planes=[0])
+		backBlend1 = core.std.MakeDiff(thin, _Gauss(core.std.MakeDiff(thin, lossed1, planes=[0]).std.Convolution(matrix=[1, 2, 1, 2, 4, 2, 1, 2, 1], planes=[0]), p=5), planes=[0])
 
 	# Limit over-sharpening by clamping to neighboring (spatial or temporal) min/max values in original
 	# Occurs here (before final temporal smooth) if SLMode == 1,2. This location will restrict sharpness more, but any artefacts introduced will be smoothed
@@ -2237,7 +2251,7 @@ def QTGMC_obs(
 		else:
 			sharpLimit1 = core.rgvs.Repair(backBlend1, core.rgvs.Repair(backBlend1, edi, mode=[12]), mode=[1])
 	elif SLMode == 2:
-		sharpLimit1 = Clamp(backBlend1, tMax, tMin, SOvs, SOvs)
+		sharpLimit1 = _Clamp(backBlend1, tMax, tMin, SOvs, SOvs)
 	else:
 		sharpLimit1 = backBlend1
 
@@ -2245,7 +2259,7 @@ def QTGMC_obs(
 	if Sbb < 2:
 		backBlend2 = sharpLimit1
 	else:
-		backBlend2 = core.std.MakeDiff(sharpLimit1, Gauss(core.std.MakeDiff(sharpLimit1, lossed1, planes=[0]).std.Convolution(matrix=[1, 2, 1, 2, 4, 2, 1, 2, 1], planes=[0]), p=5), planes=[0])
+		backBlend2 = core.std.MakeDiff(sharpLimit1, _Gauss(core.std.MakeDiff(sharpLimit1, lossed1, planes=[0]).std.Convolution(matrix=[1, 2, 1, 2, 4, 2, 1, 2, 1], planes=[0]), p=5), planes=[0])
 
 	# Add back any extracted noise, prior to final temporal smooth - this will restore detail that was removed as "noise" without restoring the noise itself
 	# Average luma of FFT3DFilter extracted noise is 128.5, so deal with that too
@@ -2281,7 +2295,7 @@ def QTGMC_obs(
 		else:
 			sharpLimit2 = core.rgvs.Repair(repair2, core.rgvs.Repair(repair2, edi, mode=[12]), mode=[1])
 	elif SLMode >= 4:
-		sharpLimit2 = Clamp(repair2, tMax, tMin, SOvs, SOvs)
+		sharpLimit2 = _Clamp(repair2, tMax, tMin, SOvs, SOvs)
 	else:
 		sharpLimit2 = repair2
 
@@ -2636,27 +2650,30 @@ def QTGMCv2(
 	tff : typing.Literal[0, 1, 2] = 0,
 	cpu : bool = True,
 	gpu : typing.Literal[-1, 0, 1, 2] = -1,
+	check : bool = True,
 ) -> vs.VideoNode:
 
-	func_name = "QTGMCv2"
-	if not isinstance(input, vs.VideoNode) :
-		raise vs.Error(f"模块 {func_name} 的子参数 input 的值无效")
-	if fps_in <= 0.0 :
-		raise vs.Error(f"模块 {func_name} 的子参数 fps_in 的值无效")
-	if not isinstance(obs, bool) :
-		raise vs.Error(f"模块 {func_name} 的子参数 obs 的值无效")
-	if deint_lv not in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11] :
-		raise vs.Error(f"模块 {func_name} 的子参数 deint_lv 的值无效")
-	if src_type not in [0, 1, 2, 3] :
-		raise vs.Error(f"模块 {func_name} 的子参数 src_type 的值无效")
-	if deint_den not in [1, 2] :
-		raise vs.Error(f"模块 {func_name} 的子参数 deint_den 的值无效")
-	if tff not in [0, 1, 2] :
-		raise vs.Error(f"模块 {func_name} 的子参数 tff 的值无效")
-	if not isinstance(cpu, bool) :
-		raise vs.Error(f"模块 {func_name} 的子参数 cpu 的值无效")
-	if gpu not in [-1, 0, 1, 2] :
-		raise vs.Error(f"模块 {func_name} 的子参数 gpu 的值无效")
+	if check :
+		func_name = "QTGMCv2"
+		if not isinstance(input, vs.VideoNode) :
+			raise vs.Error(f"模块 {func_name} 的子参数 input 的值无效")
+		if fps_in <= 0.0 :
+			raise vs.Error(f"模块 {func_name} 的子参数 fps_in 的值无效")
+		if not isinstance(obs, bool) :
+			raise vs.Error(f"模块 {func_name} 的子参数 obs 的值无效")
+		if deint_lv not in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11] :
+			raise vs.Error(f"模块 {func_name} 的子参数 deint_lv 的值无效")
+		if src_type not in [0, 1, 2, 3] :
+			raise vs.Error(f"模块 {func_name} 的子参数 src_type 的值无效")
+		if deint_den not in [1, 2] :
+			raise vs.Error(f"模块 {func_name} 的子参数 deint_den 的值无效")
+		if tff not in [0, 1, 2] :
+			raise vs.Error(f"模块 {func_name} 的子参数 tff 的值无效")
+		if not isinstance(cpu, bool) :
+			raise vs.Error(f"模块 {func_name} 的子参数 cpu 的值无效")
+		if gpu not in [-1, 0, 1, 2] :
+			raise vs.Error(f"模块 {func_name} 的子参数 gpu 的值无效")
+
 	if not tff :
 		field_src = getattr(input.get_frame(0).props, "_FieldBased", 1)
 		if field_src == 0 :

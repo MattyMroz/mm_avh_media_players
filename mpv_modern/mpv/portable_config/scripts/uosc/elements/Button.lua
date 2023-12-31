@@ -23,19 +23,18 @@ function Button:init(id, props)
 end
 
 function Button:on_coordinates() self.font_size = round((self.by - self.ay) * 0.7) end
-function Button:on_mbtn_left_down()
-	-- Don't accept clicks while hidden.
-	if self:get_visibility() <= 0 then return end
+function Button:handle_cursor_down()
 	-- We delay the callback to next tick, otherwise we are risking race
 	-- conditions as we are in the middle of event dispatching.
 	-- For example, handler might add a menu to the end of the element stack, and that
-	-- than picks up this click even we are in right now, and instantly closes itself.
+	-- than picks up this click event we are in right now, and instantly closes itself.
 	mp.add_timeout(0.01, self.on_click)
 end
 
 function Button:render()
 	local visibility = self:get_visibility()
 	if visibility <= 0 then return end
+	cursor:zone('primary_down', self, function() self:handle_cursor_down() end)
 
 	local ass = assdraw.ass_new()
 	local is_hover = self.proximity_raw == 0
@@ -46,14 +45,14 @@ function Button:render()
 	-- Background
 	if is_hover_or_active then
 		ass:rect(self.ax, self.ay, self.bx, self.by, {
-			color = self.active and background or foreground, radius = 2,
+			color = self.active and background or foreground,
+			radius = state.radius,
 			opacity = visibility * (self.active and 1 or 0.3),
 		})
 	end
 
 	-- Tooltip on hover
 	if is_hover and self.tooltip then ass:tooltip(self, self.tooltip) end
-
 
 	-- Badge
 	local icon_clip
@@ -64,8 +63,11 @@ function Button:render()
 		local width, height = math.ceil(badge_width + (badge_font_size / 7) * 2), math.ceil(badge_font_size * 0.93)
 		local bx, by = self.bx - 1, self.by - 1
 		ass:rect(bx - width, by - height, bx, by, {
-			color = foreground, radius = 2, opacity = visibility,
-			border = self.active and 0 or 1, border_color = background,
+			color = foreground,
+			radius = state.radius,
+			opacity = visibility,
+			border = self.active and 0 or 1,
+			border_color = background,
 		})
 		ass:txt(bx - width / 2, by - height / 2, 5, self.badge, badge_opts)
 
@@ -80,8 +82,11 @@ function Button:render()
 	-- Icon
 	local x, y = round(self.ax + (self.bx - self.ax) / 2), round(self.ay + (self.by - self.ay) / 2)
 	ass:icon(x, y, self.font_size, self.icon, {
-		color = foreground, border = self.active and 0 or options.text_border, border_color = background,
-		opacity = visibility, clip = icon_clip,
+		color = foreground,
+		border = self.active and 0 or options.text_border * state.scale,
+		border_color = background,
+		opacity = visibility,
+		clip = icon_clip,
 	})
 
 	return ass
