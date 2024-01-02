@@ -29,7 +29,7 @@ defaults = {
 	progress_size = 2,
 	progress_line_width = 20,
 	timeline_border = 1,
-	timeline_step = 1,
+	timeline_step = 5,
 	timeline_cache = true,
 	timeline_persistency = 'idle,audio',
 
