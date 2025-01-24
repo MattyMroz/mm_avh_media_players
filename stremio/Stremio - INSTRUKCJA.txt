@@ -3,6 +3,7 @@ INSTRUKCJA:
 Krok 1: Zainstaluj Stremio
 Otwórz przeglądarkę internetową i przejdź pod adres: https://www.stremio.com/
 Postępuj zgodnie z instrukcjami na stronie, aby pobrać i zainstalować aplikację Stremio.
+Strona internetowa: https://web.strem.io/
 
 Krok 2: Zaloguj się i zainstaluj dodatki
 a) Uruchom aplikację Stremio i zaloguj się na swoje konto.
