@@ -7,7 +7,7 @@ Postępuj zgodnie z instrukcjami na stronie, aby pobrać i zainstalować aplikac
 Krok 2: Zaloguj się i zainstaluj dodatki
 a) Uruchom aplikację Stremio i zaloguj się na swoje konto.
 b) Przejdź do sekcji dodatków.
-c) Dostępne dodatki znajdują się w trzech kategoriach, z czego jedna jest dostępna przez stronę internetową: https://stremio-addons.netlify.app
+c) Dostępne dodatki znajdują się w trzech kategoriach, z czego jedna jest dostępna przez stronę internetową: https://stremio-addons.com/
 Dodaj do swojego Stremio wybrane dodatki, takie jak:
    - Cinemeta
    - YouTube
